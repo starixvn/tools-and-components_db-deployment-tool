@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CREATE_PROC_KEYWORD_PATTERN" xml:space="preserve">
+    <value>CREATE(\t|\s)+(PROCEDURE|PROC)</value>
+    <comment>_createProcKeywordPatternValue description</comment>
+  </data>
+  <data name="CREATE_FUNCTION_PATTERN" xml:space="preserve">
+    <value>^(\s|\t)*CREATE(\s|\t)+FUNCTION(\s|\t)+(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}){1}</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fullscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WRITELOG_FUNCTION_PATTERN" xml:space="preserve">
+    <value>EXEC.*WriteLog_UserLog_RunSP</value>
+  </data>
+  <data name="WRITELOG_SP_PATTERN" xml:space="preserve">
+    <value>EXEC.*WriteLog_UserLog_RunSP</value>
+    <comment>_writeLogSPExecutionPatternValue description</comment>
+  </data>
+  <data name="SELECT_SERVER_ERROR_MESS" xml:space="preserve">
+    <value>Please select the server name</value>
+  </data>
+  <data name="CREATE_PROCEDURE_PATTERN" xml:space="preserve">
+    <value>^(\s|\t)*CREATE(\s|\t)+(PROCEDURE|PROC)(\s|\t)+(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}){1}</value>
+    <comment>_createCommandProcPatternValue description</comment>
+  </data>
+  <data name="INVALID_FILENAME_CHARACTER_MESS" xml:space="preserve">
+    <value>The description contains some invalid file name characters</value>
+    <comment>INVALID_FILENAME_CHARACTER description</comment>
+  </data>
+  <data name="SPNAME_PARAMETER_PATTERN" xml:space="preserve">
+    <value>@SpName[\t\s]*=[\t\s]*'[\d\w]+\',</value>
+    <comment>_SpNamePatternValue description</comment>
+  </data>
+  <data name="DBA_GrantPermission" xml:space="preserve">
+    <value>IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DBA_GrantPermissions]') AND type in (N'P', N'PC')) 
+             DROP PROCEDURE [dbo].[DBA_GrantPermissions] 
+	GO
+	CREATE PROCEDURE [dbo].[DBA_GrantPermissions] 
+            @SPs			nvarchar(4000), 
+            @strPermission	varchar(4000)='' OUTPUT 
+            AS 
+             BEGIN 
+             SET NOCOUNT ON; 
+            DECLARE @SP_name nvarchar(4000), @i int, @StringPermission nvarchar(4000) 
+             SELECT @SPs = @SPs + ',' , @strPermission ='GO nnn' 
+             SELECT @SPs = replace(@SPs, ',,', ',') 
+             SELECT @i = charindex(',', @SPs) 
+             WHILE @i &gt; 0 
+            BEGIN 
+             SELECT @SP_name = left(@SPs, @I-1) 
+             SELECT @SPs = replace(@SPs, @SP_name + ',', '') 
+             SELECT @strPermission = @strPermission + ' ' + state_desc + ' '+ permission_name + ' ON ' +  '[dbo].[' + OBJECT_NAME(major_id)  + ']' + ' TO '+ '['+ USER_NAME(grantee_principal_id)+']' + 'nnnGO nnn' 
+             FROM sys.database_permissions 
+            WHERE OBJECT_NAME(major_id)= @SP_Name 
+            SELECT @i = charindex(',', @SPs) 
+            END 
+            Select @strPermission 
+            END 
+            GO</value>
+    <comment>This query is used to create a stored procedure that gets the permission of a specific stored procedure on the same database</comment>
+  </data>
+  <data name="ACCOUNTINGSP_PREFIX" xml:space="preserve">
+    <value>accc_</value>
+  </data>
+  <data name="GRANT_PERMISSION_PATTERN" xml:space="preserve">
+    <value>GRANT(\t|\s)+.*ON(\t|\s)+(\[([\w\d])+\]){0,1}\.{0,1}(\[([\w\d])+\]){0,1}\.{0,1}(\[([\w\d])+\]){0,1}\.{0,1}(\[([\w\d])+\]){1}</value>
+    <comment>_grantPermisionCommandPatternValue description</comment>
+  </data>
+  <data name="ACCOUNT_ERROR_MESS" xml:space="preserve">
+    <value>Missing username or password</value>
+  </data>
+  <data name="AFFILIATESP_PREFIX" xml:space="preserve">
+    <value>aff_</value>
+  </data>
+  <data name="CREATE_FUNC_KEYWORD_PATTERN" xml:space="preserve">
+    <value>CREATE(\t|\s)+FUNCTION</value>
+    <comment>Function</comment>
+  </data>
+  <data name="ROWS_ERROR_MESS" xml:space="preserve">
+    <value>There are some errors in the configuration file
+ Please check following rows:</value>
+  </data>
+  <data name="Drop_DBAGrantPermissionSP" xml:space="preserve">
+    <value>IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DBA_GrantPermissions]') AND type in (N'P', N'PC')) 
+             DROP PROCEDURE [dbo].[DBA_GrantPermissions]</value>
+  </data>
+  <data name="EXEC_FUNCTION_PATTERN" xml:space="preserve">
+    <value>(\s|\t)*(EXEC)(\t|\s)+(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}){1}</value>
+  </data>
+  <data name="EXEC_PROCEDURE_PATTERN" xml:space="preserve">
+    <value>(\s|\t)*(EXEC|EXECUTE)(\t|\s)+(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}\.){0,1}(\[{0,1}(\d|\w)+\]{0,1}){1}</value>
+    <comment>_execCommandProcPatternValue description</comment>
+  </data>
+  <data name="FUNCTIONNAME_PARAMETER_PATTERN" xml:space="preserve">
+    <value>@SpName[\t\s]*=[\t\s]*'[\d\w]+\',</value>
+  </data>
+  <data name="SELECT_SOURCE_ERR_MESS" xml:space="preserve">
+    <value>Please select the source of SP scripts intended to be released</value>
+    <comment>SELECT_SOURCE_ERR_MESS description</comment>
+  </data>
+  <data name="AGENTSP_PREFIX" xml:space="preserve">
+    <value>age_</value>
+  </data>
+</root>

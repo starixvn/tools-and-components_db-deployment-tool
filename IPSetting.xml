@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appSettings>
+    <add key="Path" value="" />
+    <add key="Script" value="" />
+    <add key="Pre-releasePath" value="" />
+    <add key="TestPath" value="" />
+    <add key="ReleasePath" value="" />
+    <add key="Pre-release" value="_xpre" />
+    <add key="Test" value="_xtest" />
+    <add key="Release" value="" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  
+  <IpSettings>
+    <IpSetting>
+      <ServerName>DB02</ServerName>
+      <DatabaseName>bodb02</DatabaseName>
+      <IP>10.18.200.214</IP>
+      <IP_Xpre>10.18.200.211</IP_Xpre>
+      <IP_Xtest>10.18.200.211</IP_Xtest>
+      <IP_Release>10.18.200.211</IP_Release>
+    </IpSetting>
+    
+    <IpSetting>
+      <ServerName>DB02</ServerName>
+      <DatabaseName>bodb03</DatabaseName>
+      <IP>10.18.200.214</IP>
+      <IP_Xpre>10.18.200.211</IP_Xpre>
+      <IP_Xtest>10.18.200.211</IP_Xtest>
+      <IP_Release>10.18.200.211</IP_Release>
+    </IpSetting>
+
+    <IpSetting>
+      <ServerName>DB02</ServerName>
+      <DatabaseName>bodb04</DatabaseName>
+      <IP>10.18.200.214</IP>
+      <IP_Xpre>10.18.200.211</IP_Xpre>
+      <IP_Xtest>10.18.200.211</IP_Xtest>
+      <IP_Release>10.18.200.211</IP_Release>
+    </IpSetting>
+
+    <IpSetting>
+      <ServerName>DB053</ServerName>
+      <DatabaseName>bodb02</DatabaseName>
+      <IP>10.18.200.215</IP>
+      <IP_Xpre>10.18.200.211</IP_Xpre>
+      <IP_Xtest>10.18.200.211</IP_Xtest>
+      <IP_Release>10.18.200.211</IP_Release>
+    </IpSetting>
+    <IpSetting>
+      <ServerName>DB053</ServerName>
+      <DatabaseName>NexHRM</DatabaseName>
+      <IP>10.18.200.215</IP>
+      <IP_Xpre>10.18.200.211</IP_Xpre>
+      <IP_Xtest>10.18.200.211</IP_Xtest>
+      <IP_Release>10.18.200.211</IP_Release>
+    </IpSetting>
+
+    <IpSetting>
+      <ServerName>DB03</ServerName>
+      <DatabaseName>bodb02</DatabaseName>
+      <IP>10.18.200.215</IP>
+      <IP_Xpre>10.18.200.215</IP_Xpre>
+      <IP_Xtest>10.18.200.215</IP_Xtest>
+      <IP_Release>10.18.200.211</IP_Release>
+    </IpSetting>
+    
+    <IpSetting>
+      <ServerName>DB03</ServerName>
+      <DatabaseName>bodb_CRM</DatabaseName>
+      <IP>10.18.200.215</IP>
+      <IP_Xpre>10.18.200.215</IP_Xpre>
+      <IP_Xtest>10.18.200.215</IP_Xtest>
+      <IP_Release>10.18.200.211</IP_Release>
+    </IpSetting>
+
+    <IpSetting>
+      <ServerName>DB052</ServerName>
+      <DatabaseName>bodb02</DatabaseName>
+      <IP>10.18.200.211</IP>
+      <IP_Xpre>10.18.200.211</IP_Xpre>
+      <IP_Xtest>10.18.200.211</IP_Xtest>
+      <IP_Release>10.18.200.215</IP_Release>
+    </IpSetting>
+    <IpSetting>
+      <ServerName>DB052</ServerName>
+      <DatabaseName>bodb_CRM</DatabaseName>
+      <IP>10.18.200.211</IP>
+      <IP_Xpre>10.18.200.211</IP_Xpre>
+      <IP_Xtest>10.18.200.211</IP_Xtest>
+      <IP_Release>10.18.200.215</IP_Release>
+    </IpSetting>
+  </IpSettings>
+</configuration>

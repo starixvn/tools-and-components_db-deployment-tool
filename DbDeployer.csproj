@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{614A903D-3D85-4413-B782-2EB1A73C6530}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DbDeployer</RootNamespace>
+    <AssemblyName>DBDeployment</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sql.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastColoredTextBox, Version=2.7.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GemBox.Spreadsheet, Version=31.1.35.1035, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL" />
+    <Reference Include="Interop.SQLDMO, Version=8.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\90\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\90\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NativeExcel, Version=1.5.0.0, Culture=neutral, PublicKeyToken=0d392c9cfb5a90df, processorArchitecture=MSIL" />
+    <Reference Include="ProgBar, Version=1.0.3380.18659, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\HiddenCheckBoxTreeNode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\ISqlScript.cs" />
+    <Compile Include="Core\Utils\Enumerations.cs" />
+    <Compile Include="Core\Utils\Extensions.cs" />
+    <Compile Include="Core\Utils\FileUtility.cs" />
+    <Compile Include="Core\Utils\LogUtility.cs" />
+    <Compile Include="Core\SqlFunc.cs" />
+    <Compile Include="Core\NetworkDrive.cs" />
+    <Compile Include="Core\Utils\ConfigUtility.cs" />
+    <Compile Include="Core\Database.cs" />
+    <Compile Include="Core\SqlSp.cs" />
+    <Compile Include="Core\ServerIpSetting.cs" />
+    <Compile Include="Core\Utils\StringUtility.cs" />
+    <Compile Include="Core\Utils\UIUtility.cs" />
+    <Compile Include="InputSPList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputSPList.Designer.cs">
+      <DependentUpon>InputSPList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SMSColumnHeader.cs" />
+    <Compile Include="Core\SqlServer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <EmbeddedResource Include="InputSPList.resx">
+      <DependentUpon>InputSPList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandbyServer.resx">
+      <DependentUpon>StandbyServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ScriptViewer.resx">
+      <DependentUpon>ScriptViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBase.resx">
+      <DependentUpon>ucBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDeployment.resx">
+      <DependentUpon>ucDeployment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucMNLBckup.resx">
+      <DependentUpon>ucMNLBckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRollback.resx">
+      <DependentUpon>ucRollback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucScript.resx">
+      <DependentUpon>ucScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSetting.resx">
+      <DependentUpon>ucSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SPsList.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandbyServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandbyServer.Designer.cs">
+      <DependentUpon>StandbyServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScriptViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\ScriptViewer.Designer.cs">
+      <DependentUpon>ScriptViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBase.designer.cs">
+      <DependentUpon>ucBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDeployment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDeployment.designer.cs">
+      <DependentUpon>ucDeployment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMNLBckup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMNLBckup.Designer.cs">
+      <DependentUpon>ucMNLBckup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucRollback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRollback.designer.cs">
+      <DependentUpon>ucRollback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucScript.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucScript.designer.cs">
+      <DependentUpon>ucScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSetting.designer.cs">
+      <DependentUpon>ucSetting.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dependences\FastColoredTextBox.dll" />
+    <Content Include="Dependences\GemBox.Spreadsheet.dll" />
+    <Content Include="Dependences\GemBox.Spreadsheet.Xml" />
+    <Content Include="Dependences\Interop.SQLDMO.dll" />
+    <Content Include="Dependences\log4net.dll" />
+    <Content Include="Dependences\Microsoft.SqlServer.ConnectionInfo.dll" />
+    <Content Include="Dependences\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="Dependences\NativeExcel.dll" />
+    <Content Include="Dependences\ProgBar.dll" />
+    <Content Include="Dependences\ProgBar.xml" />
+    <Content Include="IPSetting.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="sql.ico" />
+    <None Include="Resources\fullscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
