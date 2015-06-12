@@ -241,16 +241,16 @@
                 }
 
                 // IP-Invalid
-                if (!IsIPv4(row[_columnIp].ToString())
-                    || !IsIPv4(row[_columnIpXpre].ToString())
-                    || !IsIPv4(row[_columnIpXtest].ToString())
-                    || !IsIPv4(row[_columnIpRelease].ToString()))
-                {
-                    if (!listInvalidIP.Contains(i))
-                    {
-                        listInvalidIP.Add(i);
-                    }
-                }
+                //if (!IsIPv4(row[_columnIp].ToString())
+                //    || !IsIPv4(row[_columnIpXpre].ToString())
+                //    || !IsIPv4(row[_columnIpXtest].ToString())
+                //    || !IsIPv4(row[_columnIpRelease].ToString()))
+                //{
+                //    if (!listInvalidIP.Contains(i))
+                //    {
+                //        listInvalidIP.Add(i);
+                //    }
+                //}
 
                 i++;
                 row.RowError = string.Empty;
