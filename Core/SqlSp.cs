@@ -91,7 +91,7 @@
         /// <param name="dicSVDB_SP"></param>
         /// <param name="sqlUtil"></param>
         /// 
-        public void LoadScriptFromScriptFileAndAddSuffix(Dictionary<string, string> dicSVDB_SP, SqlServer sqlUtil)
+        public void LoadScriptFromScriptFileAndAddSuffix(Dictionary<string, string> dicSVDB_SP, SqlServer sqlUtil, Dictionary<string, ServerIpSetting> serverConfig)
         {
             try
             {
@@ -114,7 +114,7 @@
                             if ((match = Regex.Match(line, CreateCommandProcPattern, RegexOptions.IgnoreCase)).Success)
                             {
                                 var spSpecParts = this.GetSV_DB_SPFromCallingCommand(match.Value);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                                 {
                                     //the function is bounded by []
                                     if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -149,7 +149,7 @@
                             else if ((match = Regex.Match(line, GrantPermisionCommandPattern, RegexOptions.IgnoreCase)).Success)
                             {
                                 var spSpecParts = this.GetSV_DB_SPFromCallingCommand(match.Value);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                                 {
                                     //the SP is bounded by []
                                     if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -171,7 +171,7 @@
                                 foreach (Match m in matches)
                                 {
                                     var spSpecParts = this.GetSV_DB_SPFromCallingCommand(m.Value);
-                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                                     {
                                         //the SP is bounded by []
                                         if (m.Value.LastIndexOf(']') == m.Value.Length - 1)
@@ -197,7 +197,7 @@
                                 foreach (var m in listFunc)
                                 {
                                     var spSpecParts = this.GetSV_DB_SPFromCallingCommand(m);
-                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                                     {
                                         //the SP is bounded by []
                                         if (m.LastIndexOf(']') == m.Length - 1)
@@ -240,7 +240,7 @@
         /// <param name="sqlUtil_LoadSP"></param>
         /// <param name="strConnection"></param>
         /// <param name="suffixToRemove"></param>
-        public bool LoadScriptFromDBAndRemoveSuffix(Dictionary<string, string> dicSVDB_SP, SqlServer sqlUtil, SqlServer sqlUtil_LoadSP, string strConnection, string suffixToRemove)
+        public bool LoadScriptFromDBAndRemoveSuffix(Dictionary<string, string> dicSVDB_SP, SqlServer sqlUtil, SqlServer sqlUtil_LoadSP, string strConnection, string suffixToRemove, Dictionary<string, ServerIpSetting> serverConfig)
         {
             try
             {
@@ -274,7 +274,7 @@
                         if ((match = Regex.Match(line, CreateCommandProcPattern, RegexOptions.IgnoreCase)).Success)
                         {
                             string[] spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(match.Value, suffixToRemove);
-                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                             {
                                 //the SP is bounded by []
                                 if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -307,7 +307,7 @@
                         else if ((match = Regex.Match(line, GrantPermisionCommandPattern, RegexOptions.IgnoreCase)).Success)
                         {
                             var spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(match.Value, suffixToRemove);
-                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                             {
                                 //the SP is bounded by []
                                 if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -332,7 +332,7 @@
                             foreach (Match m in matches)
                             {
                                 var spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(m.Value, suffixToRemove);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                                 {
                                     //the SP is bounded by []
                                     if (m.Value.LastIndexOf(']') == m.Value.Length - 1)
@@ -358,7 +358,7 @@
                             {
                                 //var spSpecParts = this.GetSV_DB_SPFromCallingCommand(m);
                                 string[] spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(m, suffixToRemove);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
                                 {
                                     //the SP is bounded by []
                                     if (m.LastIndexOf(']') == m.Length - 1)
@@ -424,7 +424,7 @@
             return (SqlSp)this.MemberwiseClone();
         }
 
-        private bool IsNeedToBeRenamed(string[] spSpecParts, Dictionary<string, string> dicSVDB_SP)
+        private bool IsNeedToBeRenamed(string[] spSpecParts, Dictionary<string, string> dicSVDB_SP, Dictionary<string, ServerIpSetting> serverConfig)
         {
             string[] SPs;
             //there is no SP from DB on SV selected from grid for both Deploy and Only Rename
@@ -450,6 +450,15 @@
             {
                 if (!dicSVDB_SP.ContainsKey(this.SourceServerAliasName + "-" + spSpecParts[0]))
                 {
+                    var aliass = serverConfig.Values.Where(t => t.GetIpByPhase(Phases.PreRelease) == this.DestinationServerIp).Select(t=>t.ServerName).ToList();
+                    foreach (string alias in aliass)
+                    {
+                        if (dicSVDB_SP.ContainsKey(alias + "-" + spSpecParts[0]))
+                        {
+                            return true;
+                        }
+                    }
+
                     return false;
                 }
                 else

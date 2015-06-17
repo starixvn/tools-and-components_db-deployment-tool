@@ -55,6 +55,7 @@
             this.labelStatus = new System.Windows.Forms.Label();
             this.prgbScript = new System.Windows.Forms.ProgressBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Input = new System.Windows.Forms.Button();
             this.btnOpenExcel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvSPConfig = new System.Windows.Forms.DataGridView();
@@ -72,7 +73,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Input = new System.Windows.Forms.Button();
             this.pnl_Action.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -340,6 +340,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Script configuration";
             // 
+            // btn_Input
+            // 
+            this.btn_Input.Location = new System.Drawing.Point(643, 173);
+            this.btn_Input.Name = "btn_Input";
+            this.btn_Input.Size = new System.Drawing.Size(75, 23);
+            this.btn_Input.TabIndex = 3;
+            this.btn_Input.Text = "&Input";
+            this.btn_Input.UseVisualStyleBackColor = true;
+            this.btn_Input.Visible = false;
+            this.btn_Input.Click += new System.EventHandler(this.btn_Input_Click);
+            // 
             // btnOpenExcel
             // 
             this.btnOpenExcel.Location = new System.Drawing.Point(724, 173);
@@ -509,16 +520,6 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // btn_Input
-            // 
-            this.btn_Input.Location = new System.Drawing.Point(643, 173);
-            this.btn_Input.Name = "btn_Input";
-            this.btn_Input.Size = new System.Drawing.Size(75, 23);
-            this.btn_Input.TabIndex = 3;
-            this.btn_Input.Text = "&Input";
-            this.btn_Input.UseVisualStyleBackColor = true;
-            this.btn_Input.Click += new System.EventHandler(this.btn_Input_Click);
             // 
             // ucScript
             // 

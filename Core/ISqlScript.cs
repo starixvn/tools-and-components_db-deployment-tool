@@ -29,7 +29,7 @@ namespace DbDeployer.UserControls
         /// <param name="dicSVDB_SP"></param>
         /// <param name="sqlUtil"></param>
         /// 
-        void LoadScriptFromScriptFileAndAddSuffix(Dictionary<string, string> dicSVDB_SP, SqlServer sqlUtil);
+        void LoadScriptFromScriptFileAndAddSuffix(Dictionary<string, string> dicSVDB_SP, SqlServer sqlUtil, Dictionary<string, ServerIpSetting> serverConfig);
 
         /// <summary>
         /// This method is used when we wish to release Script from pre-release or pre-test. In this situation, 
@@ -45,7 +45,8 @@ namespace DbDeployer.UserControls
             , SqlServer sqlUtil
             , SqlServer sqlUtil_LoadSP
             , string strConnection
-            , string suffixToRemove);
+            , string suffixToRemove
+            , Dictionary<string, ServerIpSetting> serverConfig);
 
         bool Deploy(SqlServer slqUtil);
 

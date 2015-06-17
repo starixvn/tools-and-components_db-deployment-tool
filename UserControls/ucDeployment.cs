@@ -454,7 +454,8 @@
                                         this._sqlServerUtil,
                                         slqServerUtil_LoadSP,
                                         connection,
-                                        this._suffixToRemove);
+                                        this._suffixToRemove,
+                                        _serverConfig);
                                 }
                                 else
                                 {
@@ -466,7 +467,7 @@
                             else
                             {
                                 //Load SP content from script file
-                                sqlScript.LoadScriptFromScriptFileAndAddSuffix(dictSVDB_Selected, this._sqlServerUtil);
+                                sqlScript.LoadScriptFromScriptFileAndAddSuffix(dictSVDB_Selected, this._sqlServerUtil, _serverConfig);
                             }
 
                             #endregion
