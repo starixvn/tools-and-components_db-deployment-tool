@@ -70,17 +70,41 @@
         {
             string scriptFolderNameType = string.Empty;
 
-            if (this.rbtPrerelease.Checked)// prerelease phase
+            if (this.rbtPrerelease.Checked)
             {
                 this._phase = Phases.PreRelease;
                 this._suffix = "_xpre";
                 scriptFolderNameType = "Pre-release";
             }
-            else if (this.rbtTest.Checked)// test phase
+            else if (this.rbtTest.Checked)
             {
                 this._phase = Phases.Test;
                 this._suffix = "_xtest";
                 scriptFolderNameType = "Test";
+            }
+            else if (this.rbtUAT1.Checked)
+            {
+                this._phase = Phases.UAT1;
+                this._suffix = "_UAT1";
+                scriptFolderNameType = "UAT1";
+            }
+            else if (this.rbtUAT2.Checked)
+            {
+                this._phase = Phases.UAT2;
+                this._suffix = "_UAT2";
+                scriptFolderNameType = "UAT2";
+            }
+            else if (this.rbtUAT3.Checked)
+            {
+                this._phase = Phases.UAT3;
+                this._suffix = "_UAT3";
+                scriptFolderNameType = "UAT3";
+            }
+            else if (this.rbtUAT4.Checked)
+            {
+                this._phase = Phases.UAT4;
+                this._suffix = "_UAT4";
+                scriptFolderNameType = "UAT4";
             }
             else// release phase
             {

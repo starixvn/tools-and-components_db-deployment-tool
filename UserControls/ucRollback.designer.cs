@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Action = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.buttonZoom = new System.Windows.Forms.Button();
@@ -49,19 +58,6 @@
             this.btnCheckSpExist = new System.Windows.Forms.Button();
             this.btnOpenConfig = new System.Windows.Forms.Button();
             this.dgvSPList = new System.Windows.Forms.DataGridView();
-            this.prgbScript = new System.Windows.Forms.ProgressBar();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbtRelease = new System.Windows.Forms.RadioButton();
-            this.rbtTest = new System.Windows.Forms.RadioButton();
-            this.rbtPrerelease = new System.Windows.Forms.RadioButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Choose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +66,15 @@
             this.IsFunction = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prgbScript = new System.Windows.Forms.ProgressBar();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbtUAT4 = new System.Windows.Forms.RadioButton();
+            this.rbtUAT3 = new System.Windows.Forms.RadioButton();
+            this.rbtUAT2 = new System.Windows.Forms.RadioButton();
+            this.rbtUAT1 = new System.Windows.Forms.RadioButton();
+            this.rbtRelease = new System.Windows.Forms.RadioButton();
+            this.rbtTest = new System.Windows.Forms.RadioButton();
+            this.rbtPrerelease = new System.Windows.Forms.RadioButton();
             this.pnl_Action.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,6 +82,86 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSPList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn1.HeaderText = "#";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 39;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Select";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Select";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCheckBoxColumn1.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ServerName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ServerName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DBName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "DBName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SPName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "SPName";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn4.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "IsFunction";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Function";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn2.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "IP";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Function";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn5.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "FileName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ServerIP";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "FileName";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // pnl_Action
             // 
@@ -271,14 +355,14 @@
             // 
             // dgvSPList
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSPList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSPList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSPList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSPList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -297,142 +381,11 @@
             this.dgvSPList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSPList_CellContentClick);
             this.dgvSPList.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSPList_ColumnHeaderMouseClick);
             // 
-            // prgbScript
-            // 
-            this.prgbScript.Location = new System.Drawing.Point(4, 512);
-            this.prgbScript.Name = "prgbScript";
-            this.prgbScript.Size = new System.Drawing.Size(880, 23);
-            this.prgbScript.TabIndex = 27;
-            this.prgbScript.Visible = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbtRelease);
-            this.groupBox2.Controls.Add(this.rbtTest);
-            this.groupBox2.Controls.Add(this.rbtPrerelease);
-            this.groupBox2.Location = new System.Drawing.Point(117, -1);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(651, 46);
-            this.groupBox2.TabIndex = 28;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Phase";
-            // 
-            // rbtRelease
-            // 
-            this.rbtRelease.AutoSize = true;
-            this.rbtRelease.Location = new System.Drawing.Point(490, 17);
-            this.rbtRelease.Name = "rbtRelease";
-            this.rbtRelease.Size = new System.Drawing.Size(64, 17);
-            this.rbtRelease.TabIndex = 2;
-            this.rbtRelease.TabStop = true;
-            this.rbtRelease.Text = "Release";
-            this.rbtRelease.UseVisualStyleBackColor = true;
-            this.rbtRelease.CheckedChanged += new System.EventHandler(this.rbtRelease_CheckedChanged);
-            // 
-            // rbtTest
-            // 
-            this.rbtTest.AutoSize = true;
-            this.rbtTest.Location = new System.Drawing.Point(267, 17);
-            this.rbtTest.Name = "rbtTest";
-            this.rbtTest.Size = new System.Drawing.Size(46, 17);
-            this.rbtTest.TabIndex = 1;
-            this.rbtTest.TabStop = true;
-            this.rbtTest.Text = "Test";
-            this.rbtTest.UseVisualStyleBackColor = true;
-            this.rbtTest.CheckedChanged += new System.EventHandler(this.rbtTest_CheckedChanged);
-            // 
-            // rbtPrerelease
-            // 
-            this.rbtPrerelease.AutoSize = true;
-            this.rbtPrerelease.Checked = true;
-            this.rbtPrerelease.Location = new System.Drawing.Point(65, 17);
-            this.rbtPrerelease.Name = "rbtPrerelease";
-            this.rbtPrerelease.Size = new System.Drawing.Size(78, 17);
-            this.rbtPrerelease.TabIndex = 0;
-            this.rbtPrerelease.TabStop = true;
-            this.rbtPrerelease.Text = "Pre-release";
-            this.rbtPrerelease.UseVisualStyleBackColor = true;
-            this.rbtPrerelease.CheckedChanged += new System.EventHandler(this.rbtPrerelease_CheckedChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn1.HeaderText = "#";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 39;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Select";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Select";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewCheckBoxColumn1.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ServerName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ServerName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DBName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "DBName";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SPName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "SPName";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.Width = 200;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "IsFunction";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Function";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn2.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "IP";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Function";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn5.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "FileName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ServerIP";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
             // No
             // 
             this.No.DataPropertyName = "No";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.No.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.No.DefaultCellStyle = dataGridViewCellStyle6;
             this.No.HeaderText = "#";
             this.No.Name = "No";
             this.No.ReadOnly = true;
@@ -501,11 +454,110 @@
             this.FileName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.FileName.Width = 150;
             // 
-            // dataGridViewTextBoxColumn7
+            // prgbScript
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "FileName";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 150;
+            this.prgbScript.Location = new System.Drawing.Point(4, 512);
+            this.prgbScript.Name = "prgbScript";
+            this.prgbScript.Size = new System.Drawing.Size(880, 23);
+            this.prgbScript.TabIndex = 27;
+            this.prgbScript.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbtUAT4);
+            this.groupBox2.Controls.Add(this.rbtUAT3);
+            this.groupBox2.Controls.Add(this.rbtUAT2);
+            this.groupBox2.Controls.Add(this.rbtUAT1);
+            this.groupBox2.Controls.Add(this.rbtRelease);
+            this.groupBox2.Controls.Add(this.rbtTest);
+            this.groupBox2.Controls.Add(this.rbtPrerelease);
+            this.groupBox2.Location = new System.Drawing.Point(6, -1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(880, 46);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Phase";
+            // 
+            // rbtUAT4
+            // 
+            this.rbtUAT4.AutoSize = true;
+            this.rbtUAT4.Location = new System.Drawing.Point(784, 17);
+            this.rbtUAT4.Name = "rbtUAT4";
+            this.rbtUAT4.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT4.TabIndex = 6;
+            this.rbtUAT4.TabStop = true;
+            this.rbtUAT4.Text = "UAT4";
+            this.rbtUAT4.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT3
+            // 
+            this.rbtUAT3.AutoSize = true;
+            this.rbtUAT3.Location = new System.Drawing.Point(662, 17);
+            this.rbtUAT3.Name = "rbtUAT3";
+            this.rbtUAT3.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT3.TabIndex = 5;
+            this.rbtUAT3.TabStop = true;
+            this.rbtUAT3.Text = "UAT3";
+            this.rbtUAT3.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT2
+            // 
+            this.rbtUAT2.AutoSize = true;
+            this.rbtUAT2.Location = new System.Drawing.Point(540, 17);
+            this.rbtUAT2.Name = "rbtUAT2";
+            this.rbtUAT2.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT2.TabIndex = 4;
+            this.rbtUAT2.TabStop = true;
+            this.rbtUAT2.Text = "UAT2";
+            this.rbtUAT2.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT1
+            // 
+            this.rbtUAT1.AutoSize = true;
+            this.rbtUAT1.Location = new System.Drawing.Point(418, 17);
+            this.rbtUAT1.Name = "rbtUAT1";
+            this.rbtUAT1.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT1.TabIndex = 3;
+            this.rbtUAT1.TabStop = true;
+            this.rbtUAT1.Text = "UAT1";
+            this.rbtUAT1.UseVisualStyleBackColor = true;
+            // 
+            // rbtRelease
+            // 
+            this.rbtRelease.AutoSize = true;
+            this.rbtRelease.Location = new System.Drawing.Point(296, 17);
+            this.rbtRelease.Name = "rbtRelease";
+            this.rbtRelease.Size = new System.Drawing.Size(64, 17);
+            this.rbtRelease.TabIndex = 2;
+            this.rbtRelease.TabStop = true;
+            this.rbtRelease.Text = "Release";
+            this.rbtRelease.UseVisualStyleBackColor = true;
+            this.rbtRelease.CheckedChanged += new System.EventHandler(this.rbtRelease_CheckedChanged);
+            // 
+            // rbtTest
+            // 
+            this.rbtTest.AutoSize = true;
+            this.rbtTest.Location = new System.Drawing.Point(174, 17);
+            this.rbtTest.Name = "rbtTest";
+            this.rbtTest.Size = new System.Drawing.Size(46, 17);
+            this.rbtTest.TabIndex = 1;
+            this.rbtTest.TabStop = true;
+            this.rbtTest.Text = "Test";
+            this.rbtTest.UseVisualStyleBackColor = true;
+            this.rbtTest.CheckedChanged += new System.EventHandler(this.rbtTest_CheckedChanged);
+            // 
+            // rbtPrerelease
+            // 
+            this.rbtPrerelease.AutoSize = true;
+            this.rbtPrerelease.Checked = true;
+            this.rbtPrerelease.Location = new System.Drawing.Point(52, 17);
+            this.rbtPrerelease.Name = "rbtPrerelease";
+            this.rbtPrerelease.Size = new System.Drawing.Size(78, 17);
+            this.rbtPrerelease.TabIndex = 0;
+            this.rbtPrerelease.TabStop = true;
+            this.rbtPrerelease.Text = "Pre-release";
+            this.rbtPrerelease.UseVisualStyleBackColor = true;
+            this.rbtPrerelease.CheckedChanged += new System.EventHandler(this.rbtPrerelease_CheckedChanged);
             // 
             // ucRollback
             // 
@@ -572,5 +624,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsFunction;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.DataGridViewTextBoxColumn FileName;
+        private System.Windows.Forms.RadioButton rbtUAT4;
+        private System.Windows.Forms.RadioButton rbtUAT3;
+        private System.Windows.Forms.RadioButton rbtUAT2;
+        private System.Windows.Forms.RadioButton rbtUAT1;
     }
 }
