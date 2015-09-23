@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace DbDeployer.UserControls
+namespace DbDeployer.Core
 {
     public interface ISqlScript
     {

@@ -5,8 +5,9 @@
     using System.Configuration;
     using System.Data;
     using System.Drawing;
-    using System.Net;
     using System.Windows.Forms;
+    using DbDeployer.Core;
+    using DbDeployer.Core.Utils;
 
     public partial class ucSetting : ucBase
     {

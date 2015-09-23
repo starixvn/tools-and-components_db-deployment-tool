@@ -1,4 +1,4 @@
-﻿namespace DbDeployer.UserControls
+﻿namespace DbDeployer.Core
 {
     using System;
     using System.Collections;

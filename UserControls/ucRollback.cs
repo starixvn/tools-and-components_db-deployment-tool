@@ -11,6 +11,7 @@
     using System.Linq;
     using System.Text;
     using System.Windows.Forms;
+    using DbDeployer.Core;
     using DbDeployer.Core.Utils;
 
     public partial class ucRollback : ucBase

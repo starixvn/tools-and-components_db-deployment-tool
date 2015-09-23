@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appSettings>
+    <add key="Path" value="" />
+    <add key="Script" value="" />
+    <add key="Pre-releasePath" value="" />
+    <add key="TestPath" value="" />
+    <add key="ReleasePath" value="" />
+    <add key="Pre-release" value="_XPre" />
+    <add key="Test" value="_XTest" />
+    <add key="Release" value="" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <IpSettings>
+    <IpSetting>
+      <ServerName>HRM</ServerName>
+      <DatabaseName>NexHRM</DatabaseName>
+      <IP>10.18.200.114</IP>
+      <IP_Xpre>10.18.200.103</IP_Xpre>
+      <IP_Xtest>10.18.200.103</IP_Xtest>
+      <IP_Release>10.18.200.103</IP_Release>
+    </IpSetting>
+  </IpSettings>
+</configuration>

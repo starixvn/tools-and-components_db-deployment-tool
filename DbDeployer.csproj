@@ -114,10 +114,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BaseSql.cs" />
     <Compile Include="Core\HiddenCheckBoxTreeNode.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Core\ISqlScript.cs" />
+    <Compile Include="Core\Phases.cs" />
     <Compile Include="Core\Utils\Enumerations.cs" />
     <Compile Include="Core\Utils\Extensions.cs" />
     <Compile Include="Core\Utils\FileUtility.cs" />
@@ -141,7 +143,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SMSColumnHeader.cs" />
     <Compile Include="Core\SqlServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

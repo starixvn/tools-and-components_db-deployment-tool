@@ -26,7 +26,7 @@ Disclaimer:    THIS FILES / SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS "AS IS
 			   
 ==============================================================================================================*/
 
-namespace DbDeployer.UserControls
+namespace DbDeployer.Core
 {
     using System;
     using System.Runtime.InteropServices;

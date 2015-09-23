@@ -49,6 +49,10 @@
             this.buttonZoom = new System.Windows.Forms.Button();
             this.rtxtOutput = new FastColoredTextBoxNS.FastColoredTextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.rbtUAT4 = new System.Windows.Forms.RadioButton();
+            this.rbtUAT3 = new System.Windows.Forms.RadioButton();
+            this.rbtUAT2 = new System.Windows.Forms.RadioButton();
+            this.rbtUAT1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbScriptSource = new System.Windows.Forms.ComboBox();
             this.rbtRelease = new System.Windows.Forms.RadioButton();
@@ -103,7 +107,7 @@
             this.Actions.Controls.Add(this.btnPreview);
             this.Actions.Controls.Add(this.btnDeploy);
             this.Actions.Controls.Add(this.chkbBackup);
-            this.Actions.Location = new System.Drawing.Point(729, -1);
+            this.Actions.Location = new System.Drawing.Point(729, 0);
             this.Actions.Name = "Actions";
             this.Actions.Size = new System.Drawing.Size(160, 87);
             this.Actions.TabIndex = 25;
@@ -113,31 +117,31 @@
             // btnPreview
             // 
             this.btnPreview.Enabled = false;
-            this.btnPreview.Location = new System.Drawing.Point(4, 51);
+            this.btnPreview.Location = new System.Drawing.Point(4, 49);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(73, 23);
             this.btnPreview.TabIndex = 27;
             this.btnPreview.Text = "&Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
-            this.btnPreview.Click += new System.EventHandler(this.btnDeployOrPreview_Click);
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnDeploy
             // 
             this.btnDeploy.Enabled = false;
-            this.btnDeploy.Location = new System.Drawing.Point(81, 51);
+            this.btnDeploy.Location = new System.Drawing.Point(81, 49);
             this.btnDeploy.Name = "btnDeploy";
             this.btnDeploy.Size = new System.Drawing.Size(75, 23);
             this.btnDeploy.TabIndex = 25;
             this.btnDeploy.Text = "Deploy";
             this.btnDeploy.UseVisualStyleBackColor = true;
-            this.btnDeploy.Click += new System.EventHandler(this.btnDeployOrPreview_Click);
+            this.btnDeploy.Click += new System.EventHandler(this.btnDeploy_Click);
             // 
             // chkbBackup
             // 
             this.chkbBackup.AutoSize = true;
             this.chkbBackup.Checked = true;
             this.chkbBackup.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkbBackup.Location = new System.Drawing.Point(7, 22);
+            this.chkbBackup.Location = new System.Drawing.Point(7, 21);
             this.chkbBackup.Name = "chkbBackup";
             this.chkbBackup.Size = new System.Drawing.Size(68, 17);
             this.chkbBackup.TabIndex = 26;
@@ -156,7 +160,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(3, 1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 86);
+            this.groupBox3.Size = new System.Drawing.Size(352, 86);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Database information";
@@ -177,7 +181,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(229, 44);
+            this.label8.Location = new System.Drawing.Point(203, 44);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 15;
@@ -187,9 +191,9 @@
             // 
             this.cbbSourceServer.Enabled = false;
             this.cbbSourceServer.FormattingEnabled = true;
-            this.cbbSourceServer.Location = new System.Drawing.Point(283, 40);
+            this.cbbSourceServer.Location = new System.Drawing.Point(246, 40);
             this.cbbSourceServer.Name = "cbbSourceServer";
-            this.cbbSourceServer.Size = new System.Drawing.Size(121, 21);
+            this.cbbSourceServer.Size = new System.Drawing.Size(98, 21);
             this.cbbSourceServer.TabIndex = 5;
             this.cbbSourceServer.SelectedIndexChanged += new System.EventHandler(this.cbbSourceServer_SelectedIndexChanged);
             // 
@@ -199,7 +203,7 @@
             this.chkAllServers.Checked = true;
             this.chkAllServers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAllServers.Enabled = false;
-            this.chkAllServers.Location = new System.Drawing.Point(283, 18);
+            this.chkAllServers.Location = new System.Drawing.Point(246, 18);
             this.chkAllServers.Name = "chkAllServers";
             this.chkAllServers.Size = new System.Drawing.Size(74, 17);
             this.chkAllServers.TabIndex = 4;
@@ -222,14 +226,14 @@
             this.txtPassword.Location = new System.Drawing.Point(71, 40);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(136, 20);
+            this.txtPassword.Size = new System.Drawing.Size(118, 20);
             this.txtPassword.TabIndex = 3;
             // 
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(71, 16);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(136, 20);
+            this.txtUserName.Size = new System.Drawing.Size(118, 20);
             this.txtUserName.TabIndex = 1;
             // 
             // label2
@@ -281,22 +285,66 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.rbtUAT4);
+            this.groupBox7.Controls.Add(this.rbtUAT3);
+            this.groupBox7.Controls.Add(this.rbtUAT2);
+            this.groupBox7.Controls.Add(this.rbtUAT1);
             this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.cbbScriptSource);
             this.groupBox7.Controls.Add(this.rbtRelease);
             this.groupBox7.Controls.Add(this.rbtPrerelease);
             this.groupBox7.Controls.Add(this.rbtTest);
-            this.groupBox7.Location = new System.Drawing.Point(424, 0);
+            this.groupBox7.Location = new System.Drawing.Point(362, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(298, 87);
+            this.groupBox7.Size = new System.Drawing.Size(360, 87);
             this.groupBox7.TabIndex = 20;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Phases";
             // 
+            // rbtUAT4
+            // 
+            this.rbtUAT4.AutoSize = true;
+            this.rbtUAT4.Location = new System.Drawing.Point(303, 21);
+            this.rbtUAT4.Name = "rbtUAT4";
+            this.rbtUAT4.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT4.TabIndex = 17;
+            this.rbtUAT4.Text = "UAT4";
+            this.rbtUAT4.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT3
+            // 
+            this.rbtUAT3.AutoSize = true;
+            this.rbtUAT3.Location = new System.Drawing.Point(249, 21);
+            this.rbtUAT3.Name = "rbtUAT3";
+            this.rbtUAT3.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT3.TabIndex = 16;
+            this.rbtUAT3.Text = "UAT3";
+            this.rbtUAT3.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT2
+            // 
+            this.rbtUAT2.AutoSize = true;
+            this.rbtUAT2.Location = new System.Drawing.Point(195, 21);
+            this.rbtUAT2.Name = "rbtUAT2";
+            this.rbtUAT2.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT2.TabIndex = 15;
+            this.rbtUAT2.Text = "UAT2";
+            this.rbtUAT2.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT1
+            // 
+            this.rbtUAT1.AutoSize = true;
+            this.rbtUAT1.Location = new System.Drawing.Point(138, 21);
+            this.rbtUAT1.Name = "rbtUAT1";
+            this.rbtUAT1.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT1.TabIndex = 14;
+            this.rbtUAT1.Text = "UAT1";
+            this.rbtUAT1.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(110, 53);
+            this.label4.Location = new System.Drawing.Point(84, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 12;
@@ -310,8 +358,12 @@
             "",
             "Origin",
             "Pre-release",
-            "Test"});
-            this.cbbScriptSource.Location = new System.Drawing.Point(152, 49);
+            "Test",
+            "UAT1",
+            "UAT2",
+            "UAT3",
+            "UAT4"});
+            this.cbbScriptSource.Location = new System.Drawing.Point(126, 50);
             this.cbbScriptSource.Name = "cbbScriptSource";
             this.cbbScriptSource.Size = new System.Drawing.Size(135, 21);
             this.cbbScriptSource.TabIndex = 13;
@@ -319,7 +371,7 @@
             // rbtRelease
             // 
             this.rbtRelease.AutoSize = true;
-            this.rbtRelease.Location = new System.Drawing.Point(17, 51);
+            this.rbtRelease.Location = new System.Drawing.Point(9, 52);
             this.rbtRelease.Name = "rbtRelease";
             this.rbtRelease.Size = new System.Drawing.Size(64, 17);
             this.rbtRelease.TabIndex = 11;
@@ -331,7 +383,7 @@
             // 
             this.rbtPrerelease.AutoSize = true;
             this.rbtPrerelease.Checked = true;
-            this.rbtPrerelease.Location = new System.Drawing.Point(17, 22);
+            this.rbtPrerelease.Location = new System.Drawing.Point(9, 21);
             this.rbtPrerelease.Name = "rbtPrerelease";
             this.rbtPrerelease.Size = new System.Drawing.Size(78, 17);
             this.rbtPrerelease.TabIndex = 5;
@@ -342,7 +394,7 @@
             // rbtTest
             // 
             this.rbtTest.AutoSize = true;
-            this.rbtTest.Location = new System.Drawing.Point(152, 22);
+            this.rbtTest.Location = new System.Drawing.Point(89, 21);
             this.rbtTest.Name = "rbtTest";
             this.rbtTest.Size = new System.Drawing.Size(46, 17);
             this.rbtTest.TabIndex = 6;
@@ -659,5 +711,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsFunction;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.DataGridViewTextBoxColumn FileName;
+        private System.Windows.Forms.RadioButton rbtUAT4;
+        private System.Windows.Forms.RadioButton rbtUAT3;
+        private System.Windows.Forms.RadioButton rbtUAT2;
+        private System.Windows.Forms.RadioButton rbtUAT1;
     }
 }

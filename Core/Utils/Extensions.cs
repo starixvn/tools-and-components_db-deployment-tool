@@ -12,7 +12,7 @@
 
             input = Regex.Replace(input, "\\[([^\\s]*)\\]", "$1");
 
-            return input;            
+            return input;
         }
 
         public static string RemoveTab(this string input)

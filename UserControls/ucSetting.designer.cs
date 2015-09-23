@@ -30,20 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.gpbIpSetting = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvIpConfig = new System.Windows.Forms.DataGridView();
-            this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DBName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IpXpre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IpXtest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IpRelease = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Standby = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +44,13 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DBName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IpXpre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IpXtest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IpRelease = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Standby = new System.Windows.Forms.DataGridViewLinkColumn();
             this.gpbIpSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIpConfig)).BeginInit();
             this.SuspendLayout();
@@ -132,61 +132,6 @@
             this.dgvIpConfig.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIpConfig_CellEndEdit);
             this.dgvIpConfig.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvIpConfig_CellFormatting);
             // 
-            // ServerName
-            // 
-            this.ServerName.DataPropertyName = "ServerName";
-            this.ServerName.HeaderText = "Server Name";
-            this.ServerName.Name = "ServerName";
-            // 
-            // DBName
-            // 
-            this.DBName.DataPropertyName = "DbName";
-            this.DBName.HeaderText = "DB Name";
-            this.DBName.Name = "DBName";
-            this.DBName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Ip
-            // 
-            this.Ip.DataPropertyName = "Ip";
-            this.Ip.HeaderText = "IP";
-            this.Ip.Name = "Ip";
-            this.Ip.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Ip.Width = 120;
-            // 
-            // IpXpre
-            // 
-            this.IpXpre.DataPropertyName = "IpXpre";
-            this.IpXpre.HeaderText = "IP Pre-release";
-            this.IpXpre.Name = "IpXpre";
-            this.IpXpre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.IpXpre.Width = 120;
-            // 
-            // IpXtest
-            // 
-            this.IpXtest.DataPropertyName = "IpXtest";
-            this.IpXtest.HeaderText = "IP Test";
-            this.IpXtest.Name = "IpXtest";
-            this.IpXtest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.IpXtest.Width = 120;
-            // 
-            // IpRelease
-            // 
-            this.IpRelease.DataPropertyName = "IpRelease";
-            this.IpRelease.HeaderText = "IP Release";
-            this.IpRelease.Name = "IpRelease";
-            this.IpRelease.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.IpRelease.Width = 120;
-            // 
-            // Standby
-            // 
-            this.Standby.DataPropertyName = "Standby";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Standby.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Standby.HeaderText = "Standby DBs";
-            this.Standby.Name = "Standby";
-            this.Standby.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Standby.Width = 124;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Server Name";
@@ -241,6 +186,61 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn7.Width = 124;
+            // 
+            // ServerName
+            // 
+            this.ServerName.DataPropertyName = "ServerName";
+            this.ServerName.HeaderText = "Server Name";
+            this.ServerName.Name = "ServerName";
+            // 
+            // DBName
+            // 
+            this.DBName.DataPropertyName = "DbName";
+            this.DBName.HeaderText = "DB Name";
+            this.DBName.Name = "DBName";
+            this.DBName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Ip
+            // 
+            this.Ip.DataPropertyName = "Ip";
+            this.Ip.HeaderText = "IP";
+            this.Ip.Name = "Ip";
+            this.Ip.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Ip.Width = 120;
+            // 
+            // IpXpre
+            // 
+            this.IpXpre.DataPropertyName = "IpXpre";
+            this.IpXpre.HeaderText = "IP Pre-release";
+            this.IpXpre.Name = "IpXpre";
+            this.IpXpre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.IpXpre.Width = 120;
+            // 
+            // IpXtest
+            // 
+            this.IpXtest.DataPropertyName = "IpXtest";
+            this.IpXtest.HeaderText = "IP Test/UAT";
+            this.IpXtest.Name = "IpXtest";
+            this.IpXtest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.IpXtest.Width = 120;
+            // 
+            // IpRelease
+            // 
+            this.IpRelease.DataPropertyName = "IpRelease";
+            this.IpRelease.HeaderText = "IP Release";
+            this.IpRelease.Name = "IpRelease";
+            this.IpRelease.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.IpRelease.Width = 120;
+            // 
+            // Standby
+            // 
+            this.Standby.DataPropertyName = "Standby";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Standby.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Standby.HeaderText = "Standby DBs";
+            this.Standby.Name = "Standby";
+            this.Standby.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Standby.Width = 124;
             // 
             // ucSetting
             // 

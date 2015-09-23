@@ -11,6 +11,7 @@
     using System.Linq;
     using System.Text;
     using System.Windows.Forms;
+    using DbDeployer.Core;
     using DbDeployer.Core.Utils;
 
     public partial class ucDeployment : ucBase
@@ -269,20 +270,7 @@
                     var keySetting = this._configUtil.GetKey(serverName, dbName);
                     var isSp = (this.dgvSPList[_columnIsFunction, i].Value.ToString()) != "True";
                     //get IP according to selected phase
-                    string ip = string.Empty;
-
-                    if (this._suffix == "_xpre")
-                    {
-                        ip = _serverConfig[keySetting].IpXpre;
-                    }
-                    else if (this._suffix == "_xtest")
-                    {
-                        ip = _serverConfig[keySetting].IpXtest;
-                    }
-                    else
-                    {
-                        ip = _serverConfig[keySetting].IpRelease;
-                    }
+                    string ip = _serverConfig[keySetting].GetIpByPhase(this._selectedPhase);
 
                     var isConnected = this._sqlServerUtil.Connect(ip, this.txtUserName.Text, this.txtPassword.Text);
                     if (isConnected)
@@ -330,19 +318,28 @@
             this.prgbScript.Visible = false;
         }
 
-        /// <summary>
-        /// Deploy the selected SPs on the grid to the destination server 
-        /// that are already defined in the config file with an IP for a specific phase.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeployOrPreview_Click(object sender, EventArgs e)
+        private void btnPreview_Click(object sender, EventArgs e)
         {
             if (!this.CheckPrerequisites())
             {
                 return;
             }
 
+            ReviewOrDeploy(isDeploy: false);
+        }
+
+        private void btnDeploy_Click(object sender, EventArgs e)
+        {
+            if (!this.CheckPrerequisites())
+            {
+                return;
+            }
+
+            ReviewOrDeploy(isDeploy: true);
+        }
+
+        private void ReviewOrDeploy(bool isDeploy)
+        {
             this.Cursor = Cursors.WaitCursor;
             this.InitializeProgressBar();
             try
@@ -374,12 +371,11 @@
                 bool isConnectedToSourceServer = false;
                 string connection = string.Empty;
                 string dateTimeNow = StringUtility.GetFormatedCurrentDateTime();
-                bool isDeploy = ((Button)sender).Name == btnDeploy.Name;
                 #endregion
 
                 this.dgvSPList = UIUtility.RemoveDuplicateRows(this.dgvSPList, this._checkColumnsList);
                 this.rtxtOutput.Clear();
-                
+
                 scriptFolderNameType = this.GetSuffix();
                 SaveUserIntoConfig();
                 ColorGrid();
@@ -609,7 +605,7 @@
                     configFileContent += key + ":" + dictSVDB_SP_OnlyRenamed[key] + "\r\n";
                 }
 
-                if (((Button)sender).Name == btnDeploy.Name)
+                if (isDeploy)
                 {
                     // write config file for backup
                     if (dictSPs_BackupExistedSP.Keys.Count > 0)
@@ -642,8 +638,9 @@
 
                 this._sqlServerUtil.Disconnect();
             }
-            catch 
-            { 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             this.Cursor = Cursors.Arrow;
             this.prgbScript.Visible = false;
@@ -846,40 +843,86 @@
         {
             string scriptFolderNameType = string.Empty;
 
-            if (this.rbtPrerelease.Checked)// prerelease phase
+            if (this.rbtPrerelease.Checked)
             {
                 this._selectedPhase = Phases.PreRelease;
                 this._suffix = "_xpre";
-                // for folder name
                 scriptFolderNameType = "Pre-release";
             }
-            else if (this.rbtTest.Checked)// test phase
+            else if (this.rbtTest.Checked)
             {
                 this._selectedPhase = Phases.Test;
                 this._suffix = "_xtest";
-                // for folder name
                 scriptFolderNameType = "Test";
+            }
+            else if (this.rbtUAT1.Checked)
+            {
+                this._selectedPhase = Phases.UAT1;
+                this._suffix = "_UAT1";
+                scriptFolderNameType = "UAT1";
+            }
+            else if (this.rbtUAT2.Checked)
+            {
+                this._selectedPhase = Phases.UAT2;
+                this._suffix = "_UAT2";
+                scriptFolderNameType = "UAT2";
+            }
+            else if (this.rbtUAT3.Checked)
+            {
+                this._selectedPhase = Phases.UAT3;
+                this._suffix = "_UAT3";
+                scriptFolderNameType = "UAT3";
+            }
+            else if (this.rbtUAT4.Checked)
+            {
+                this._selectedPhase = Phases.UAT4;
+                this._suffix = "_UAT4";
+                scriptFolderNameType = "UAT4";
             }
             else// release phase
             {
-                this._selectedPhase = Phases.Release;
-                this._suffix = string.Empty;
-                // for folder name
-                scriptFolderNameType = "Release";
-
-                if (this.cbbScriptSource.SelectedItem.ToString() == "Pre-release")
-                {
-                    this._sourcePhase = Phases.PreRelease;
-                    this._suffixToRemove = "_xpre";
-                }
-                else if (this.cbbScriptSource.SelectedItem.ToString() == "Test")
-                {
-                    this._sourcePhase = Phases.Test;
-                    this._suffixToRemove = "_xtest";
-                }
+                scriptFolderNameType = GetSuffixForRelease();
             }
 
             return scriptFolderNameType;
+        }
+
+        private string GetSuffixForRelease()
+        {
+            this._selectedPhase = Phases.Release;
+            this._suffix = string.Empty;
+
+            switch (this.cbbScriptSource.SelectedItem.ToString())
+            {
+                case "Pre-release":
+                    this._sourcePhase = Phases.PreRelease;
+                    this._suffixToRemove = "_xpre";
+                    break;
+                case "Test":
+                    this._sourcePhase = Phases.Test;
+                    this._suffixToRemove = "_xtest";
+                    break;
+                case "UAT1":
+                    this._sourcePhase = Phases.UAT1;
+                    this._suffixToRemove = "_UAT1";
+                    break;
+                case "UAT2":
+                    this._sourcePhase = Phases.UAT2;
+                    this._suffixToRemove = "_UAT2";
+                    break;
+                case "UAT3":
+                    this._sourcePhase = Phases.UAT3;
+                    this._suffixToRemove = "_UAT3";
+                    break;
+                case "UAT4":
+                    this._sourcePhase = Phases.UAT4;
+                    this._suffixToRemove = "_UAT4";
+                    break;
+                default:
+                    break;
+            }
+
+            return "Release";
         }
 
         /// <summary>
@@ -1310,6 +1353,10 @@
                 }
             }
         }
+
+        
+
+        
 
     }
 }

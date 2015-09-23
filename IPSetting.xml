@@ -13,89 +13,89 @@
   </appSettings>
   <IpSettings>
     <IpSetting>
-      <ServerName>DBPRO</ServerName>
+      <ServerName>DBCUST</ServerName>
+      <DatabaseName>CustDB</DatabaseName>
+      <IP>10.18.200.230\SQLSERVER2008R2</IP>
+      <IP_Xpre>10.18.200.233</IP_Xpre>
+      <IP_Xtest>10.18.200.233</IP_Xtest>
+      <IP_Release>10.18.200.233</IP_Release>
+    </IpSetting>
+    <IpSetting>
+      <ServerName>DBAGE</ServerName>
       <DatabaseName>bodb02</DatabaseName>
-      <IP>10.18.200.230</IP>
-      <IP_Xpre>10.18.200.230</IP_Xpre>
-      <IP_Xtest>10.18.200.230</IP_Xtest>
-      <IP_Release>10.18.200.230</IP_Release>
+      <IP>10.18.200.231</IP>
+      <IP_Xpre>10.18.200.215</IP_Xpre>
+      <IP_Xtest>10.18.200.215</IP_Xtest>
+      <IP_Release>10.18.200.215</IP_Release>
+    </IpSetting>
+    <IpSetting>
+      <ServerName>DBEAS</ServerName>
+      <DatabaseName>bodb_EAS</DatabaseName>
+      <IP>10.18.200.231</IP>
+      <IP_Xpre>10.18.200.215</IP_Xpre>
+      <IP_Xtest>10.18.200.215</IP_Xtest>
+      <IP_Release>10.18.200.215</IP_Release>
     </IpSetting>
     <IpSetting>
       <ServerName>DBTXN</ServerName>
       <DatabaseName>bodb02</DatabaseName>
-      <IP>10.18.200.234</IP>
+      <IP>10.18.200.230</IP>
       <IP_Xpre>10.18.200.206</IP_Xpre>
       <IP_Xtest>10.18.200.206</IP_Xtest>
       <IP_Release>10.18.200.206</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>DBPOLICY</ServerName>
+      <ServerName>DBACC</ServerName>
       <DatabaseName>bodb02</DatabaseName>
-      <IP>10.18.200.215</IP>
-      <IP_Xpre>10.18.200.232</IP_Xpre>
-      <IP_Xtest>10.18.200.232</IP_Xtest>
-      <IP_Release>10.18.200.232</IP_Release>
+      <IP>10.18.200.232</IP>
+      <IP_Xpre>10.18.200.234</IP_Xpre>
+      <IP_Xtest>10.18.200.234</IP_Xtest>
+      <IP_Release>10.18.200.234</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>DBAGE</ServerName>
+      <ServerName>DBPRO</ServerName>
       <DatabaseName>bodb02</DatabaseName>
-      <IP>10.18.200.215</IP>
+      <IP>10.18.200.230</IP>
+      <IP_Xpre>10.18.200.206</IP_Xpre>
+      <IP_Xtest>10.18.200.206</IP_Xtest>
+      <IP_Release>10.18.200.206</IP_Release>
+    </IpSetting>
+    <IpSetting>
+      <ServerName>DBLIC</ServerName>
+      <DatabaseName>bodb_Licensee</DatabaseName>
+      <IP>10.18.200.231</IP>
       <IP_Xpre>10.18.200.215</IP_Xpre>
       <IP_Xtest>10.18.200.215</IP_Xtest>
       <IP_Release>10.18.200.215</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>DBBET</ServerName>
-      <DatabaseName>bk</DatabaseName>
+      <ServerName>DBNAP</ServerName>
+      <DatabaseName>bodb_NAP</DatabaseName>
       <IP>10.18.200.231</IP>
-      <IP_Xpre>10.18.200.231</IP_Xpre>
-      <IP_Xtest>10.18.200.231</IP_Xtest>
-      <IP_Release>10.18.200.231</IP_Release>
+      <IP_Xpre>10.18.200.215</IP_Xpre>
+      <IP_Xtest>10.18.200.215</IP_Xtest>
+      <IP_Release>10.18.200.215</IP_Release>
     </IpSetting>
     <IpSetting>
       <ServerName>DBEXT</ServerName>
-      <DatabaseName>bodb02</DatabaseName>
+      <DatabaseName>bodb_PlaytechCS</DatabaseName>
       <IP>10.18.200.231</IP>
       <IP_Xpre>10.18.200.215</IP_Xpre>
       <IP_Xtest>10.18.200.215</IP_Xtest>
       <IP_Release>10.18.200.215</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>DB054</ServerName>
+      <ServerName>DBPOLICY</ServerName>
       <DatabaseName>bodb02</DatabaseName>
       <IP>10.18.200.231</IP>
-      <IP_Xpre>10.18.200.231</IP_Xpre>
-      <IP_Xtest>10.18.200.231</IP_Xtest>
-      <IP_Release>10.18.200.231</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBACC</ServerName>
-      <DatabaseName>bodb02</DatabaseName>
-      <IP>10.18.200.215</IP>
-      <IP_Xpre>10.18.200.232</IP_Xpre>
-      <IP_Xtest>10.18.200.232</IP_Xtest>
-      <IP_Release>10.18.200.232</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBBET</ServerName>
-      <DatabaseName>bk_test</DatabaseName>
-      <IP>10.18.200.215</IP>
       <IP_Xpre>10.18.200.215</IP_Xpre>
       <IP_Xtest>10.18.200.215</IP_Xtest>
-      <IP_Release>10.18.200.211</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DB05</ServerName>
-      <DatabaseName>bodb02</DatabaseName>
-      <IP>10.18.200.206</IP>
-      <IP_Xpre>10.18.200.211</IP_Xpre>
-      <IP_Xtest>10.18.200.211</IP_Xtest>
       <IP_Release>10.18.200.215</IP_Release>
     </IpSetting>
     <IpSetting>
       <ServerName>DB052</ServerName>
       <DatabaseName>bodb02</DatabaseName>
-      <IP>10.18.200.215</IP>
+      <IP>10.18.200.231</IP>
       <IP_Xpre>10.18.200.231</IP_Xpre>
       <IP_Xtest>10.18.200.231</IP_Xtest>
       <IP_Release>10.18.200.231</IP_Release>
@@ -109,92 +109,28 @@
       <IP_Release>10.18.200.215</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>DB054</ServerName>
-      <DatabaseName>bodb_CRM</DatabaseName>
-      <IP>10.18.200.231</IP>
-      <IP_Xpre>10.18.200.215</IP_Xpre>
-      <IP_Xtest>10.18.200.215</IP_Xtest>
-      <IP_Release>10.18.200.215</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBDW2</ServerName>
-      <DatabaseName>bodb_dwrs</DatabaseName>
-      <IP>10.18.200.206</IP>
-      <IP_Xpre>10.18.200.206</IP_Xpre>
-      <IP_Xtest>10.18.200.206</IP_Xtest>
-      <IP_Release>10.18.200.206</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBTXN</ServerName>
-      <DatabaseName>CustDB</DatabaseName>
-      <IP>10.18.200.206</IP>
+      <ServerName>DBCUST</ServerName>
+      <DatabaseName>IPDB</DatabaseName>
+      <IP>10.18.200.230\SQLSERVER2008R2</IP>
       <IP_Xpre>10.18.200.233</IP_Xpre>
       <IP_Xtest>10.18.200.233</IP_Xtest>
       <IP_Release>10.18.200.233</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>DBLOG</ServerName>
-      <DatabaseName>bodb_CustomerLog</DatabaseName>
+      <ServerName>DBCHECK</ServerName>
+      <DatabaseName>CheckResultDB</DatabaseName>
       <IP>10.18.200.231</IP>
       <IP_Xpre>10.18.200.231</IP_Xpre>
       <IP_Xtest>10.18.200.231</IP_Xtest>
       <IP_Release>10.18.200.231</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>DBACC</ServerName>
-      <DatabaseName>bodb_ACC</DatabaseName>
-      <IP>10.18.200.232</IP>
-      <IP_Xpre>10.18.200.232</IP_Xpre>
-      <IP_Xtest>10.18.200.232</IP_Xtest>
-      <IP_Release>10.18.200.232</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBLIC</ServerName>
-      <DatabaseName>bodb_Licensee</DatabaseName>
-      <IP>10.18.200.232</IP>
-      <IP_Xpre>10.18.200.232</IP_Xpre>
-      <IP_Xtest>10.18.200.232</IP_Xtest>
-      <IP_Release>10.18.200.232</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBEAS</ServerName>
-      <DatabaseName>bodb_EAS</DatabaseName>
-      <IP>10.18.200.215</IP>
-      <IP_Xpre>10.18.200.215</IP_Xpre>
-      <IP_Xtest>10.18.200.215</IP_Xtest>
-      <IP_Release>10.18.200.215</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBTXN</ServerName>
-      <DatabaseName>bodb_CustomerLog</DatabaseName>
-      <IP>10.18.200.230</IP>
-      <IP_Xpre>10.18.200.230</IP_Xpre>
-      <IP_Xtest>10.18.200.230</IP_Xtest>
-      <IP_Release>10.18.200.230</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBAGE</ServerName>
-      <DatabaseName>bodb_AGE</DatabaseName>
-      <IP>10.18.200.231</IP>
-      <IP_Xpre>10.18.200.231</IP_Xpre>
-      <IP_Xtest>10.18.200.231</IP_Xtest>
-      <IP_Release>10.18.200.231</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBARC</ServerName>
-      <DatabaseName>bodb_Archive</DatabaseName>
-      <IP>10.18.200.232</IP>
-      <IP_Xpre>10.18.200.232</IP_Xpre>
-      <IP_Xtest>10.18.200.232</IP_Xtest>
-      <IP_Release>10.18.200.232</IP_Release>
-    </IpSetting>
-    <IpSetting>
-      <ServerName>DBRMS</ServerName>
-      <DatabaseName>bodb_RMS</DatabaseName>
-      <IP>10.18.200.231</IP>
-      <IP_Xpre>10.18.200.215</IP_Xpre>
-      <IP_Xtest>10.18.200.215</IP_Xtest>
-      <IP_Release>10.18.200.215</IP_Release>
+      <ServerName>INTERNAL</ServerName>
+      <DatabaseName>Ndict</DatabaseName>
+      <IP>10.18.200.114</IP>
+      <IP_Xpre>10.18.200.114</IP_Xpre>
+      <IP_Xtest>10.18.200.114</IP_Xtest>
+      <IP_Release>10.18.200.114</IP_Release>
     </IpSetting>
   </IpSettings>
 </configuration>

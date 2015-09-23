@@ -6,6 +6,7 @@
     using System.Windows.Forms;
     using System.Xml;
     using DbDeployer.Core;
+    using DbDeployer.Core.Utils;
     using DbDeployer.UserControls;
 
     public partial class StandbyServer : Form

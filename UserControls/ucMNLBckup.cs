@@ -8,7 +8,7 @@
     using System.Linq;
     using System.Threading;
     using System.Windows.Forms;
-    using DbDeployer.UserControls;
+    using DbDeployer.Core;
     using DbDeployer.Core.Utils;
 
     public partial class ucMNLBckup : ucBase

@@ -1,4 +1,4 @@
-﻿namespace DbDeployer.UserControls
+﻿namespace DbDeployer.Core
 {
     using System;
 
@@ -41,6 +41,38 @@
         { 
             get; 
             set; 
+        }
+
+        public string IpUAT1
+        {
+            get
+            {
+                return IpXpre;
+            }
+        }
+
+        public string IpUAT2
+        {
+            get
+            {
+                return IpXpre;
+            }
+        }
+
+        public string IpUAT3
+        {
+            get
+            {
+                return IpXpre;
+            }
+        }
+
+        public string IpUAT4
+        {
+            get
+            {
+                return IpXpre;
+            }
         }
 
         public string IpRelease 
@@ -89,6 +121,14 @@
                     return this.IpXpre;
                 case Phases.Test:
                     return this.IpXtest;
+                case Phases.UAT1:
+                    return this.IpUAT1;
+                case Phases.UAT2:
+                    return this.IpUAT2;
+                case Phases.UAT3:
+                    return this.IpUAT3;
+                case Phases.UAT4:
+                    return this.IpUAT4;
                 case Phases.Release:
                     return this.IpRelease;
                 default:

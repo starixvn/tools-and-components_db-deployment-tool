@@ -1,4 +1,4 @@
-﻿namespace DbDeployer.UserControls
+﻿namespace DbDeployer.Core
 {
     using System;
     using System.Collections.Generic;
@@ -6,54 +6,19 @@
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
-    using DbDeployer.Core.Utils;
-
-    public enum Phases { PreRelease = 0, Test, Release }
 
     /// <summary>
     /// This class is used to simulate a store procedure on the DBMS
     /// </summary>
-    class SqlSp : ISqlScript
+    class SqlSp : BaseSql, ISqlScript
     {
-        private string _suffix;
-
-        #region Constants
         private static readonly string CreateCommandProcPattern = Properties.Resources.CREATE_PROCEDURE_PATTERN;
         private static readonly string ExecCommandProcPattern = Properties.Resources.EXEC_PROCEDURE_PATTERN;
         private static readonly string GrantPermisionCommandPattern = Properties.Resources.GRANT_PERMISSION_PATTERN;
         private static readonly string WriteLogSpExecutionPattern = Properties.Resources.WRITELOG_SP_PATTERN;
         private static readonly string SpNamePattern = Properties.Resources.SPNAME_PARAMETER_PATTERN;
         private static readonly string CreateProcKeywordPattern = Properties.Resources.CREATE_PROC_KEYWORD_PATTERN;
-        #endregion Constants
 
-        #region Properties
-
-        public string Name { get; set; }
-
-        public string SourceServerIp { get; set; }
-
-        public string SourceServerAliasName { get; set; }
-
-        public string DbName { get; set; }
-
-        public Phases Phase { get; set; }
-
-        public string DestinationServerIp { get; set; }
-
-        public string ScriptFilePath { get; set; }
-
-        public StringBuilder Content { get; set; }
-
-        public bool IsSp
-        {
-            get
-            {
-                return true;
-            }
-        }
-
-        #endregion
-        //constructors
         public SqlSp() { }
         public SqlSp(string spname,
             string sourceServerIp,
@@ -70,19 +35,7 @@
             this.DestinationServerIp = destinationServer;
             this.ScriptFilePath = scriptFilePath;
             this.Phase = phase;
-
-            switch (this.Phase)
-            {
-                case Phases.PreRelease:
-                    this._suffix = "_xpre";
-                    break;
-                case Phases.Test:
-                    this._suffix = "_xtest";
-                    break;
-                case Phases.Release:
-                    this._suffix = string.Empty;
-                    break;
-            }
+            this.IsSp = true;
         }
 
         /// <summary>
@@ -114,7 +67,7 @@
                             if ((match = Regex.Match(line, CreateCommandProcPattern, RegexOptions.IgnoreCase)).Success)
                             {
                                 var spSpecParts = this.GetSV_DB_SPFromCallingCommand(match.Value);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, this.Phase))
                                 {
                                     //the function is bounded by []
                                     if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -149,7 +102,7 @@
                             else if ((match = Regex.Match(line, GrantPermisionCommandPattern, RegexOptions.IgnoreCase)).Success)
                             {
                                 var spSpecParts = this.GetSV_DB_SPFromCallingCommand(match.Value);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, this.Phase))
                                 {
                                     //the SP is bounded by []
                                     if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -171,7 +124,7 @@
                                 foreach (Match m in matches)
                                 {
                                     var spSpecParts = this.GetSV_DB_SPFromCallingCommand(m.Value);
-                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, this.Phase))
                                     {
                                         //the SP is bounded by []
                                         if (m.Value.LastIndexOf(']') == m.Value.Length - 1)
@@ -197,7 +150,7 @@
                                 foreach (var m in listFunc)
                                 {
                                     var spSpecParts = this.GetSV_DB_SPFromCallingCommand(m);
-                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                                    if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, this.Phase))
                                     {
                                         //the SP is bounded by []
                                         if (m.LastIndexOf(']') == m.Length - 1)
@@ -247,7 +200,7 @@
                 this.Content = new StringBuilder();
                 var originalContent = new StringBuilder();
                 //load content and permission
-                originalContent.Append(sqlUtil_LoadSP.GetScript(this.DbName, this.Name + suffixToRemove, true));
+                originalContent.Append(sqlUtil_LoadSP.GetScript(this.DbName, this.Name + suffixToRemove, IsSp));
                 if (originalContent.ToString().IndexOf("Cannot get Script") == -1)
                 {
                     originalContent.Append("\r\n" + SqlServer.GetPermission(strConnection, this.Name + suffixToRemove));
@@ -256,6 +209,8 @@
                 {
                     return false;
                 }
+
+                Phases phase = GetPhaseBySuffix(suffixToRemove);
 
                 //Remove suffix
                 using (var sr = new StringReader(originalContent.ToString()))
@@ -274,7 +229,7 @@
                         if ((match = Regex.Match(line, CreateCommandProcPattern, RegexOptions.IgnoreCase)).Success)
                         {
                             string[] spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(match.Value, suffixToRemove);
-                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, phase))
                             {
                                 //the SP is bounded by []
                                 if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -286,7 +241,7 @@
                                     replacement = match.Value.Substring(0, match.Value.Length - suffixToRemove.Length);
                                 }
 
-                                if (isTheFirstCreateProcCommand && sqlUtil.IsScriptExisted(this.DbName, this.Name + this._suffix, true) &&
+                                if (isTheFirstCreateProcCommand && sqlUtil.IsScriptExisted(this.DbName, this.Name + this._suffix, IsSp) &&
                                     (String.Compare(spSpecParts[spSpecParts.Length - 1], (this.Name)) == 0))//if SP already exist, change the "CREATE PROC" to "ALTER PROC"
                                 {
                                     replacement = Regex.Replace(replacement, CreateProcKeywordPattern, "ALTER PROCEDURE", RegexOptions.IgnoreCase);
@@ -307,7 +262,7 @@
                         else if ((match = Regex.Match(line, GrantPermisionCommandPattern, RegexOptions.IgnoreCase)).Success)
                         {
                             var spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(match.Value, suffixToRemove);
-                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                            if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, phase))
                             {
                                 //the SP is bounded by []
                                 if (match.Value.LastIndexOf(']') == match.Value.Length - 1)
@@ -332,7 +287,7 @@
                             foreach (Match m in matches)
                             {
                                 var spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(m.Value, suffixToRemove);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, phase))
                                 {
                                     //the SP is bounded by []
                                     if (m.Value.LastIndexOf(']') == m.Value.Length - 1)
@@ -358,7 +313,7 @@
                             {
                                 //var spSpecParts = this.GetSV_DB_SPFromCallingCommand(m);
                                 string[] spSpecParts = this.GetSV_DB_SPFromCallingCommand_WithoutSuffix(m, suffixToRemove);
-                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig))
+                                if (this.IsNeedToBeRenamed(spSpecParts, dicSVDB_SP, serverConfig, phase))
                                 {
                                     //the SP is bounded by []
                                     if (m.LastIndexOf(']') == m.Length - 1)
@@ -392,235 +347,6 @@
 
             return true;
         }
-
-        public bool Deploy(SqlServer slqUtil)
-        {
-            try
-            {
-                return slqUtil.CreateScript(this.DbName, this.Content.ToString(), true);
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        public void Backup(SqlServer sqlUtil, string connection, string backupFolderPath, string dateTimeNow, string des)
-        {
-            var backupContent = new StringBuilder().Append(sqlUtil.GetScript(this.DbName, this.Name + this._suffix, true));
-            backupContent.Append(SqlServer.GetPermission(connection, this.Name + this._suffix));
-            LogUtility.WriteToFile(
-                backupContent.ToString(), 
-                backupFolderPath + @"\" + dateTimeNow + "-" + this.SourceServerAliasName + "-" + this.DbName + "-" + des + "-" + this.Name + ".sql");
-        }
-
-        public void WriteContentToScriptFile(string filePath)
-        {
-            LogUtility.WriteToFile(this.Content.ToString(), filePath);
-        }
-
-        public ISqlScript Copy()
-        {
-            return (SqlSp)this.MemberwiseClone();
-        }
-
-        private bool IsNeedToBeRenamed(string[] spSpecParts, Dictionary<string, string> dicSVDB_SP, Dictionary<string, ServerIpSetting> serverConfig)
-        {
-            string[] SPs;
-            //there is no SP from DB on SV selected from grid for both Deploy and Only Rename
-            if (spSpecParts.Length == 3)
-            {
-                if (!dicSVDB_SP.ContainsKey(spSpecParts[0] + "-" + spSpecParts[1]))
-                {
-                    return false;
-                }
-                else
-                {
-                    SPs = dicSVDB_SP[spSpecParts[0] + "-" + spSpecParts[1]].Split(',');
-                    for (var i = 0; i < SPs.Length; i++)
-                    {
-                        if ((String.Compare(spSpecParts[2], SPs[i], true)) == 0)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-            else if (spSpecParts.Length == 2)
-            {
-                if (!dicSVDB_SP.ContainsKey(this.SourceServerAliasName + "-" + spSpecParts[0]))
-                {
-                    var aliass = serverConfig.Values.Where(t => t.GetIpByPhase(Phases.PreRelease) == this.DestinationServerIp).Select(t=>t.ServerName).ToList();
-                    foreach (string alias in aliass)
-                    {
-                        if (dicSVDB_SP.ContainsKey(alias + "-" + spSpecParts[0]))
-                        {
-                            return true;
-                        }
-                    }
-
-                    return false;
-                }
-                else
-                {
-                    SPs = dicSVDB_SP[this.SourceServerAliasName + "-" + spSpecParts[0]].Split(',');
-                    for (var i = 0; i < SPs.Length; i++)
-                    {
-                        if ((String.Compare(spSpecParts[1], SPs[i], true)) == 0)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-            else if (spSpecParts.Length == 1)
-            {
-                //return true;
-                if (!dicSVDB_SP.ContainsKey(this.SourceServerAliasName + "-" + this.DbName))
-                {
-                    return false;
-                }
-                else
-                {
-                    SPs = dicSVDB_SP[this.SourceServerAliasName + "-" + this.DbName].Split(',');
-                    for (var i = 0; i < SPs.Length; i++)
-                    {
-                        if ((String.Compare(spSpecParts[0], SPs[i], true)) == 0)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        private string[] GetSV_DB_SPFromCallingCommand(string spCommandLine)
-        {
-            spCommandLine = spCommandLine.Trim();
-            string[] retVal = null;
-            spCommandLine = spCommandLine.RemoveTab();// avoid tab space appears immediately before CalledSPSpec
-            var calledSPSpecification = spCommandLine.Substring(spCommandLine.LastIndexOf(' ') + 1);// CREATE PROC <db02.bodb02.dbo.SampleSP>
-            var specParts = calledSPSpecification.Split('.');
-
-            if (specParts.Length == 4)//full format
-            {
-                retVal = new string[3];
-                retVal[0] = StringUtility.RemoveSquareBracket(specParts[0].ToUpper());//server
-                retVal[1] = StringUtility.RemoveSquareBracket(specParts[1].ToUpper());//DB
-                retVal[2] = StringUtility.RemoveSquareBracket(specParts[3]);//SP
-            }
-            else if (specParts.Length == 3)//bodb02.dbo.sampleSP
-            {
-                retVal = new string[2];
-                retVal[0] = StringUtility.RemoveSquareBracket(specParts[0].ToUpper());//DB
-                retVal[1] = StringUtility.RemoveSquareBracket(specParts[2]);
-            }
-            else if (specParts.Length == 2)//dbo.sampleSP
-            {
-                retVal = new string[1];
-                retVal[0] = StringUtility.RemoveSquareBracket(specParts[1]);//SP
-            }
-            else if (specParts.Length == 1)//sampleSP
-            {
-                retVal = new string[1];
-                retVal[0] = StringUtility.RemoveSquareBracket(specParts[0]);//SP
-            }
-
-            return retVal;
-        }
-
-        private string[] GetSV_DB_SPFromCallingCommand_WithoutSuffix(string spCommandLine, string suffix)
-        {
-
-            spCommandLine = spCommandLine.Trim();
-            string[] retVal = null;
-            spCommandLine = spCommandLine.Replace('\t', ' ');//avoid tab space appears immediately before CalledSPSpec
-            var calledSPSpecification = spCommandLine.Substring(spCommandLine.LastIndexOf(' ') + 1);//CREATE PROC <db02.bodb02.dbo.SampleSP>
-            var specParts = calledSPSpecification.Split('.');
-
-            if (spCommandLine.IndexOf(suffix) == -1)
-            {
-                retVal = new string[1];
-                retVal[0] = spCommandLine;
-            }
-            else
-            {
-                if (specParts.Length == 4)//full format
-                {
-                    retVal = new string[3];
-                    retVal[0] = StringUtility.RemoveSquareBracket(specParts[0].ToUpper());//server
-                    retVal[1] = StringUtility.RemoveSquareBracket(specParts[1].ToUpper());//DB
-                    int lenNosuffix = StringUtility.RemoveSquareBracket(specParts[3]).Length - suffix.Length;
-                    lenNosuffix = lenNosuffix > 0 ? lenNosuffix : StringUtility.RemoveSquareBracket(specParts[3]).Length;
-                    retVal[2] = StringUtility.RemoveSquareBracket(specParts[3]).Substring(0, lenNosuffix);//SP
-                }
-                else if (specParts.Length == 3)//bodb02.dbo.sampleSP
-                {
-                    retVal = new string[2];
-                    retVal[0] = StringUtility.RemoveSquareBracket(specParts[0].ToUpper());//DB
-                    int lenNosuffix = StringUtility.RemoveSquareBracket(specParts[2]).Length - suffix.Length;
-                    lenNosuffix = lenNosuffix > 0 ? lenNosuffix : StringUtility.RemoveSquareBracket(specParts[2]).Length;
-                    retVal[1] = StringUtility.RemoveSquareBracket(specParts[2]).Substring(0, lenNosuffix);
-                }
-                else if (specParts.Length == 2)//dbo.sampleSP
-                {
-                    retVal = new string[1];
-                    int lenNosuffix = StringUtility.RemoveSquareBracket(specParts[1]).Length - suffix.Length;
-                    lenNosuffix = lenNosuffix > 0 ? lenNosuffix : StringUtility.RemoveSquareBracket(specParts[1]).Length;
-                    retVal[0] = StringUtility.RemoveSquareBracket(specParts[1]).Substring(0, lenNosuffix);//SP
-                }
-                else if (specParts.Length == 1)//sampleSP
-                {
-                    retVal = new string[1];
-                    int lenNosuffix = StringUtility.RemoveSquareBracket(specParts[0]).Length - suffix.Length;
-                    lenNosuffix = lenNosuffix > 0 ? lenNosuffix : StringUtility.RemoveSquareBracket(specParts[0]).Length;
-                    retVal[0] = StringUtility.RemoveSquareBracket(specParts[0]).Substring(0, lenNosuffix);//SP
-                }
-            }
-
-            return retVal;
-        }
-
-        public IList<string> GetListFunc(Dictionary<string, string> dicSVDB_SP, string line)
-        {
-            List<string> listFunc = new List<string>();
-            int index;
-            var listText = line.Split(' ', '\t');
-            var listKey = dicSVDB_SP.Values.ToList();
-            foreach (var items in listKey)
-            {
-                var keys = items.Split(',');
-                foreach (var item in keys)
-                {
-                    foreach (var text in listText)
-                    {
-                        index = text.IndexOf(item);
-                        if (index > -1)
-                        {
-                            int i = 0;
-                            for (i = index; i < text.Length; i++)
-                            {
-                                if (text[i] == '(')
-                                {
-                                    break;
-                                }
-                            }
-
-                            if (!listFunc.Contains(text.Substring(0, i)))
-                            {
-                                listFunc.Add(text.Substring(0, i));
-                            }
-                        }
-                    }
-                }
-            }
-
-            return listFunc;
-        }
-
     }
-
 }
 
