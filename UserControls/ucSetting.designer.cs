@@ -219,7 +219,7 @@
             // IpXtest
             // 
             this.IpXtest.DataPropertyName = "IpXtest";
-            this.IpXtest.HeaderText = "IP Test/UAT";
+            this.IpXtest.HeaderText = "IP Test";
             this.IpXtest.Name = "IpXtest";
             this.IpXtest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IpXtest.Width = 120;
