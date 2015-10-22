@@ -136,7 +136,7 @@
                                             replacement = m.Value + this._suffix;
                                         }
                                         //line = Regex.Replace(line, m.Value.ToString(), replacement, RegexOptions.IgnoreCase);
-                                        line = line.Replace(m.Value.Trim(), replacement);
+                                        line = line.Replace(m.Value.Trim(), replacement.Trim());
                                     }
                                 }
 
@@ -162,7 +162,7 @@
                                             replacement = m.Substring(0, m.Length) + this._suffix;
                                         }
                                         // line = Regex.Replace(line, m.Value.ToString(), replacement, RegexOptions.IgnoreCase);
-                                        line = line.Replace(m.Trim(), replacement);
+                                        line = line.Replace(m.Trim(), replacement.Trim());
                                     }
                                 }
 

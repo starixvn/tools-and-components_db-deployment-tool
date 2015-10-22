@@ -275,7 +275,7 @@
                                     replacement = m.Substring(0, m.Length - suffixToRemove.Length);
                                 }
                                 //line = Regex.Replace(line, m.Value.ToString(), replacement, RegexOptions.IgnoreCase);
-                                line = line.Replace(m.Trim(), replacement);
+                                line = line.Replace(m.Trim(), replacement.Trim());
                             }
                         }
 

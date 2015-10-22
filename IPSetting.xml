@@ -125,12 +125,12 @@
       <IP_Release>10.18.200.231</IP_Release>
     </IpSetting>
     <IpSetting>
-      <ServerName>INTERNAL</ServerName>
-      <DatabaseName>Ndict</DatabaseName>
-      <IP>10.18.200.114</IP>
-      <IP_Xpre>10.18.200.114</IP_Xpre>
-      <IP_Xtest>10.18.200.114</IP_Xtest>
-      <IP_Release>10.18.200.114</IP_Release>
+      <ServerName>DBLOG</ServerName>
+      <DatabaseName>bodb_CustomerLog</DatabaseName>
+      <IP>10.18.200.231</IP>
+      <IP_Xpre>10.18.200.215</IP_Xpre>
+      <IP_Xtest>10.18.200.215</IP_Xtest>
+      <IP_Release>10.18.200.215</IP_Release>
     </IpSetting>
   </IpSettings>
 </configuration>
