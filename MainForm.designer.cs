@@ -113,7 +113,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SP & Function Deployment v4.0";
+            this.Text = "SP & Function Deployment v4.5";
             this.Load += new System.EventHandler(this.SPDeployment_Load);
             this.tabMain.ResumeLayout(false);
             this.ResumeLayout(false);

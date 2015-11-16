@@ -258,22 +258,9 @@ namespace DbDeployer.Core
             }
             else if (spSpecParts.Length == 2)
             {
-                if (!dicSVDB_SP.ContainsKey(this.SourceServerAliasName + "-" + spSpecParts[0]))
+                if (dicSVDB_SP.ContainsKey(this.SourceServerAliasName + "-" + this.DbName))
                 {
-                    var aliass = serverConfig.Values.Where(t => t.GetIpByPhase(phase) == this.DestinationServerIp).Select(t => t.ServerName).ToList();
-                    foreach (string alias in aliass)
-                    {
-                        if (dicSVDB_SP.ContainsKey(alias + "-" + spSpecParts[0]))
-                        {
-                            return true;
-                        }
-                    }
-
-                    return false;
-                }
-                else
-                {
-                    SPs = dicSVDB_SP[this.SourceServerAliasName + "-" + spSpecParts[0]].Split(',');
+                    SPs = dicSVDB_SP[this.SourceServerAliasName + "-" + this.DbName].Split(',');
                     for (var i = 0; i < SPs.Length; i++)
                     {
                         if ((String.Compare(spSpecParts[1], SPs[i], true)) == 0)
@@ -282,6 +269,29 @@ namespace DbDeployer.Core
                         }
                     }
                 }
+
+                var aliass = serverConfig.Values.Where(t => (t.GetIpByPhase(phase) == this.DestinationServerIp))
+                    .Select(t => new { t.ServerName, t.DBName}).ToList();
+                if (aliass.Any())
+                {
+                    foreach (var alias in aliass)
+                    {
+                        if (dicSVDB_SP.ContainsKey(alias.ServerName + "-" + alias.DBName.ToUpper()))
+                        {
+                            SPs = dicSVDB_SP[alias.ServerName+ "-" + alias.DBName.ToUpper()].Split(',');
+
+                            for (var i = 0; i < SPs.Length; i++)
+                            {
+                                if ((String.Compare(spSpecParts[1], SPs[i], true)) == 0)
+                                {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                return false;
             }
             else if (spSpecParts.Length == 1)
             {
