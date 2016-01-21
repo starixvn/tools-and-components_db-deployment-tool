@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_Action = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
@@ -59,13 +59,6 @@
             this.btnOpenExcel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvSPConfig = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Choose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DBName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SPName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsFunction = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +66,13 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Choose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DBName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SPName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsFunction = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Action.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -88,7 +88,7 @@
             this.pnl_Action.Controls.Add(this.groupBox4);
             this.pnl_Action.Location = new System.Drawing.Point(0, 201);
             this.pnl_Action.Name = "pnl_Action";
-            this.pnl_Action.Size = new System.Drawing.Size(892, 304);
+            this.pnl_Action.Size = new System.Drawing.Size(992, 304);
             this.pnl_Action.TabIndex = 23;
             this.pnl_Action.Visible = false;
             // 
@@ -103,7 +103,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(486, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(402, 90);
+            this.groupBox2.Size = new System.Drawing.Size(502, 90);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control";
@@ -113,7 +113,7 @@
             this.txtDesc.Location = new System.Drawing.Point(99, 41);
             this.txtDesc.MaxLength = 50;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(214, 20);
+            this.txtDesc.Size = new System.Drawing.Size(397, 20);
             this.txtDesc.TabIndex = 33;
             // 
             // label1
@@ -128,7 +128,7 @@
             // btnGenerate
             // 
             this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(319, 64);
+            this.btnGenerate.Location = new System.Drawing.Point(422, 64);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 31;
@@ -139,7 +139,7 @@
             // btnPreview
             // 
             this.btnPreview.Enabled = false;
-            this.btnPreview.Location = new System.Drawing.Point(238, 64);
+            this.btnPreview.Location = new System.Drawing.Point(341, 64);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(75, 23);
             this.btnPreview.TabIndex = 30;
@@ -150,7 +150,7 @@
             // btnBrowserFolder
             // 
             this.btnBrowserFolder.Enabled = false;
-            this.btnBrowserFolder.Location = new System.Drawing.Point(319, 14);
+            this.btnBrowserFolder.Location = new System.Drawing.Point(424, 14);
             this.btnBrowserFolder.Name = "btnBrowserFolder";
             this.btnBrowserFolder.Size = new System.Drawing.Size(72, 23);
             this.btnBrowserFolder.TabIndex = 29;
@@ -160,16 +160,16 @@
             // 
             // txtScriptTo
             // 
-            this.txtScriptTo.Location = new System.Drawing.Point(98, 16);
+            this.txtScriptTo.Location = new System.Drawing.Point(98, 15);
             this.txtScriptTo.Name = "txtScriptTo";
             this.txtScriptTo.ReadOnly = true;
-            this.txtScriptTo.Size = new System.Drawing.Size(215, 20);
+            this.txtScriptTo.Size = new System.Drawing.Size(318, 20);
             this.txtScriptTo.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 22);
+            this.label7.Location = new System.Drawing.Point(33, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 27;
@@ -278,7 +278,7 @@
             this.groupBox4.Controls.Add(this.rtxtOutput);
             this.groupBox4.Location = new System.Drawing.Point(3, 101);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(885, 212);
+            this.groupBox4.Size = new System.Drawing.Size(985, 212);
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Output";
@@ -287,7 +287,7 @@
             // 
             this.buttonZoom.BackgroundImage = global::DbDeployer.Properties.Resources.fullscreen;
             this.buttonZoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonZoom.Location = new System.Drawing.Point(829, 163);
+            this.buttonZoom.Location = new System.Drawing.Point(950, 174);
             this.buttonZoom.Name = "buttonZoom";
             this.buttonZoom.Size = new System.Drawing.Size(23, 23);
             this.buttonZoom.TabIndex = 3;
@@ -306,7 +306,7 @@
             this.rtxtOutput.Name = "rtxtOutput";
             this.rtxtOutput.Paddings = new System.Windows.Forms.Padding(0);
             this.rtxtOutput.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.rtxtOutput.Size = new System.Drawing.Size(871, 187);
+            this.rtxtOutput.Size = new System.Drawing.Size(971, 187);
             this.rtxtOutput.TabIndex = 0;
             this.rtxtOutput.WordWrap = true;
             this.rtxtOutput.DoubleClick += new System.EventHandler(this.rtxtOutput_DoubleClick);
@@ -323,7 +323,7 @@
             // 
             this.prgbScript.Location = new System.Drawing.Point(7, 513);
             this.prgbScript.Name = "prgbScript";
-            this.prgbScript.Size = new System.Drawing.Size(882, 23);
+            this.prgbScript.Size = new System.Drawing.Size(982, 23);
             this.prgbScript.TabIndex = 21;
             this.prgbScript.Visible = false;
             // 
@@ -335,14 +335,14 @@
             this.groupBox1.Controls.Add(this.dgvSPConfig);
             this.groupBox1.Location = new System.Drawing.Point(3, -2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(886, 200);
+            this.groupBox1.Size = new System.Drawing.Size(986, 200);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Script configuration";
             // 
             // btn_Input
             // 
-            this.btn_Input.Location = new System.Drawing.Point(643, 173);
+            this.btn_Input.Location = new System.Drawing.Point(743, 173);
             this.btn_Input.Name = "btn_Input";
             this.btn_Input.Size = new System.Drawing.Size(75, 23);
             this.btn_Input.TabIndex = 3;
@@ -353,7 +353,7 @@
             // 
             // btnOpenExcel
             // 
-            this.btnOpenExcel.Location = new System.Drawing.Point(724, 173);
+            this.btnOpenExcel.Location = new System.Drawing.Point(824, 173);
             this.btnOpenExcel.Name = "btnOpenExcel";
             this.btnOpenExcel.Size = new System.Drawing.Size(75, 23);
             this.btnOpenExcel.TabIndex = 2;
@@ -364,7 +364,7 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(805, 173);
+            this.btnSave.Location = new System.Drawing.Point(905, 173);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
@@ -395,68 +395,11 @@
             this.dgvSPConfig.Location = new System.Drawing.Point(4, 17);
             this.dgvSPConfig.Name = "dgvSPConfig";
             this.dgvSPConfig.ReadOnly = true;
-            this.dgvSPConfig.Size = new System.Drawing.Size(876, 150);
+            this.dgvSPConfig.Size = new System.Drawing.Size(976, 150);
             this.dgvSPConfig.TabIndex = 0;
             this.dgvSPConfig.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSPConfig_CellContentClick);
             this.dgvSPConfig.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSPConfig_CellEndEdit);
             this.dgvSPConfig.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSPConfig_ColumnHeaderMouseClick);
-            // 
-            // No
-            // 
-            this.No.DataPropertyName = "No";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.No.DefaultCellStyle = dataGridViewCellStyle2;
-            this.No.HeaderText = "#";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.No.Width = 30;
-            // 
-            // Choose
-            // 
-            this.Choose.DataPropertyName = "Choose";
-            this.Choose.HeaderText = "Select  ";
-            this.Choose.Name = "Choose";
-            this.Choose.ReadOnly = true;
-            this.Choose.Width = 65;
-            // 
-            // ServerName
-            // 
-            this.ServerName.DataPropertyName = "ServerName";
-            this.ServerName.HeaderText = "Server Name";
-            this.ServerName.Name = "ServerName";
-            this.ServerName.ReadOnly = true;
-            // 
-            // DBName
-            // 
-            this.DBName.DataPropertyName = "DBName";
-            this.DBName.HeaderText = "DB Name";
-            this.DBName.Name = "DBName";
-            this.DBName.ReadOnly = true;
-            // 
-            // SPName
-            // 
-            this.SPName.DataPropertyName = "SPName";
-            this.SPName.HeaderText = "SP Name";
-            this.SPName.Name = "SPName";
-            this.SPName.ReadOnly = true;
-            this.SPName.Width = 323;
-            // 
-            // IsFunction
-            // 
-            this.IsFunction.DataPropertyName = "IsFunction";
-            this.IsFunction.HeaderText = "Function";
-            this.IsFunction.Name = "IsFunction";
-            this.IsFunction.ReadOnly = true;
-            this.IsFunction.Width = 65;
-            // 
-            // IP
-            // 
-            this.IP.DataPropertyName = "IP";
-            this.IP.HeaderText = "Server IP";
-            this.IP.Name = "IP";
-            this.IP.ReadOnly = true;
-            this.IP.Width = 150;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -521,6 +464,63 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 150;
             // 
+            // No
+            // 
+            this.No.DataPropertyName = "No";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.No.DefaultCellStyle = dataGridViewCellStyle2;
+            this.No.HeaderText = "#";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.No.Width = 30;
+            // 
+            // Choose
+            // 
+            this.Choose.DataPropertyName = "Choose";
+            this.Choose.HeaderText = "Select  ";
+            this.Choose.Name = "Choose";
+            this.Choose.ReadOnly = true;
+            this.Choose.Width = 65;
+            // 
+            // ServerName
+            // 
+            this.ServerName.DataPropertyName = "ServerName";
+            this.ServerName.HeaderText = "Server Name";
+            this.ServerName.Name = "ServerName";
+            this.ServerName.ReadOnly = true;
+            // 
+            // DBName
+            // 
+            this.DBName.DataPropertyName = "DBName";
+            this.DBName.HeaderText = "DB Name";
+            this.DBName.Name = "DBName";
+            this.DBName.ReadOnly = true;
+            // 
+            // SPName
+            // 
+            this.SPName.DataPropertyName = "SPName";
+            this.SPName.HeaderText = "SP Name";
+            this.SPName.Name = "SPName";
+            this.SPName.ReadOnly = true;
+            this.SPName.Width = 423;
+            // 
+            // IsFunction
+            // 
+            this.IsFunction.DataPropertyName = "IsFunction";
+            this.IsFunction.HeaderText = "Function";
+            this.IsFunction.Name = "IsFunction";
+            this.IsFunction.ReadOnly = true;
+            this.IsFunction.Width = 65;
+            // 
+            // IP
+            // 
+            this.IP.DataPropertyName = "IP";
+            this.IP.HeaderText = "Server IP";
+            this.IP.Name = "IP";
+            this.IP.ReadOnly = true;
+            this.IP.Width = 150;
+            // 
             // ucScript
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,7 +530,7 @@
             this.Controls.Add(this.prgbScript);
             this.Controls.Add(this.groupBox1);
             this.Name = "ucScript";
-            this.Size = new System.Drawing.Size(892, 567);
+            this.Size = new System.Drawing.Size(992, 567);
             this.Load += new System.EventHandler(this.ucScript_Load);
             this.pnl_Action.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -581,6 +581,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.Panel pnl_Action;
         private System.Windows.Forms.CheckBox chk_SaveUserName;
+        private System.Windows.Forms.Button btn_Input;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Choose;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerName;
@@ -588,6 +589,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SPName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsFunction;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
-        private System.Windows.Forms.Button btn_Input;
     }
 }

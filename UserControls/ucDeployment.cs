@@ -1056,11 +1056,11 @@
         {
             if (data.Rows.Count > 5)
             {
-                this.dgvSPList.Columns[_columnFileName].Width = 132;
+                this.dgvSPList.Columns[_columnFileName].Width = 106;
             }
             else
             {
-                this.dgvSPList.Columns[_columnFileName].Width = 150;
+                this.dgvSPList.Columns[_columnFileName].Width = 123;
             }
         }
 

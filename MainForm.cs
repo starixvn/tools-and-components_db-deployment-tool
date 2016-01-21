@@ -17,7 +17,6 @@
             tabScript.Controls.Add(new ucScript());
             tabDeploy.Controls.Add(new ucDeployment());
             tabRollback.Controls.Add(new ucRollback());
-            tabMNLBckup.Controls.Add(new ucMNLBckup());
         }
     }
 }

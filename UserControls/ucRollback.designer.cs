@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,14 +58,6 @@
             this.btnCheckSpExist = new System.Windows.Forms.Button();
             this.btnOpenConfig = new System.Windows.Forms.Button();
             this.dgvSPList = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Choose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DBName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScriptName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsFunction = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prgbScript = new System.Windows.Forms.ProgressBar();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtUAT4 = new System.Windows.Forms.RadioButton();
@@ -75,6 +67,14 @@
             this.rbtRelease = new System.Windows.Forms.RadioButton();
             this.rbtTest = new System.Windows.Forms.RadioButton();
             this.rbtPrerelease = new System.Windows.Forms.RadioButton();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Choose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DBName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScriptName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsFunction = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Action.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,8 +86,8 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn1.HeaderText = "#";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -169,7 +169,7 @@
             this.pnl_Action.Controls.Add(this.groupBox3);
             this.pnl_Action.Location = new System.Drawing.Point(0, 237);
             this.pnl_Action.Name = "pnl_Action";
-            this.pnl_Action.Size = new System.Drawing.Size(892, 273);
+            this.pnl_Action.Size = new System.Drawing.Size(992, 273);
             this.pnl_Action.TabIndex = 30;
             this.pnl_Action.Visible = false;
             // 
@@ -179,7 +179,7 @@
             this.groupBox4.Controls.Add(this.rtxtOutput);
             this.groupBox4.Location = new System.Drawing.Point(6, 62);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(880, 209);
+            this.groupBox4.Size = new System.Drawing.Size(980, 209);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Output";
@@ -188,7 +188,7 @@
             // 
             this.buttonZoom.BackgroundImage = global::DbDeployer.Properties.Resources.fullscreen;
             this.buttonZoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonZoom.Location = new System.Drawing.Point(830, 180);
+            this.buttonZoom.Location = new System.Drawing.Point(949, 180);
             this.buttonZoom.Name = "buttonZoom";
             this.buttonZoom.Size = new System.Drawing.Size(23, 23);
             this.buttonZoom.TabIndex = 4;
@@ -207,7 +207,7 @@
             this.rtxtOutput.Name = "rtxtOutput";
             this.rtxtOutput.Paddings = new System.Windows.Forms.Padding(0);
             this.rtxtOutput.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.rtxtOutput.Size = new System.Drawing.Size(867, 184);
+            this.rtxtOutput.Size = new System.Drawing.Size(967, 184);
             this.rtxtOutput.TabIndex = 0;
             this.rtxtOutput.DoubleClick += new System.EventHandler(this.rtxtOutput_DoubleClick);
             // 
@@ -224,7 +224,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(6, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(880, 58);
+            this.groupBox3.Size = new System.Drawing.Size(980, 58);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Database information";
@@ -232,7 +232,7 @@
             // btnRollback
             // 
             this.btnRollback.Enabled = false;
-            this.btnRollback.Location = new System.Drawing.Point(789, 17);
+            this.btnRollback.Location = new System.Drawing.Point(900, 17);
             this.btnRollback.Name = "btnRollback";
             this.btnRollback.Size = new System.Drawing.Size(75, 23);
             this.btnRollback.TabIndex = 16;
@@ -256,7 +256,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(584, 22);
+            this.label8.Location = new System.Drawing.Point(642, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 13);
             this.label8.TabIndex = 15;
@@ -266,9 +266,9 @@
             // 
             this.cbbSourceServer.Enabled = false;
             this.cbbSourceServer.FormattingEnabled = true;
-            this.cbbSourceServer.Location = new System.Drawing.Point(655, 18);
+            this.cbbSourceServer.Location = new System.Drawing.Point(724, 18);
             this.cbbSourceServer.Name = "cbbSourceServer";
-            this.cbbSourceServer.Size = new System.Drawing.Size(121, 21);
+            this.cbbSourceServer.Size = new System.Drawing.Size(170, 21);
             this.cbbSourceServer.TabIndex = 5;
             this.cbbSourceServer.SelectedIndexChanged += new System.EventHandler(this.cbbSourceServer_SelectedIndexChanged);
             // 
@@ -278,7 +278,7 @@
             this.chkAllServers.Checked = true;
             this.chkAllServers.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAllServers.Enabled = false;
-            this.chkAllServers.Location = new System.Drawing.Point(497, 20);
+            this.chkAllServers.Location = new System.Drawing.Point(555, 20);
             this.chkAllServers.Name = "chkAllServers";
             this.chkAllServers.Size = new System.Drawing.Size(74, 17);
             this.chkAllServers.TabIndex = 4;
@@ -327,7 +327,7 @@
             this.groupBox1.Controls.Add(this.dgvSPList);
             this.groupBox1.Location = new System.Drawing.Point(6, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(880, 193);
+            this.groupBox1.Size = new System.Drawing.Size(980, 193);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Script list";
@@ -335,7 +335,7 @@
             // btnCheckSpExist
             // 
             this.btnCheckSpExist.Enabled = false;
-            this.btnCheckSpExist.Location = new System.Drawing.Point(801, 164);
+            this.btnCheckSpExist.Location = new System.Drawing.Point(901, 164);
             this.btnCheckSpExist.Name = "btnCheckSpExist";
             this.btnCheckSpExist.Size = new System.Drawing.Size(75, 23);
             this.btnCheckSpExist.TabIndex = 3;
@@ -345,7 +345,7 @@
             // 
             // btnOpenConfig
             // 
-            this.btnOpenConfig.Location = new System.Drawing.Point(721, 164);
+            this.btnOpenConfig.Location = new System.Drawing.Point(821, 164);
             this.btnOpenConfig.Name = "btnOpenConfig";
             this.btnOpenConfig.Size = new System.Drawing.Size(75, 23);
             this.btnOpenConfig.TabIndex = 2;
@@ -355,14 +355,14 @@
             // 
             // dgvSPList
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSPList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSPList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSPList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSPList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -376,16 +376,121 @@
             this.dgvSPList.Location = new System.Drawing.Point(4, 18);
             this.dgvSPList.Name = "dgvSPList";
             this.dgvSPList.ReadOnly = true;
-            this.dgvSPList.Size = new System.Drawing.Size(872, 140);
+            this.dgvSPList.Size = new System.Drawing.Size(972, 140);
             this.dgvSPList.TabIndex = 0;
             this.dgvSPList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSPList_CellContentClick);
             this.dgvSPList.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSPList_ColumnHeaderMouseClick);
             // 
+            // prgbScript
+            // 
+            this.prgbScript.Location = new System.Drawing.Point(4, 512);
+            this.prgbScript.Name = "prgbScript";
+            this.prgbScript.Size = new System.Drawing.Size(980, 23);
+            this.prgbScript.TabIndex = 27;
+            this.prgbScript.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbtUAT4);
+            this.groupBox2.Controls.Add(this.rbtUAT3);
+            this.groupBox2.Controls.Add(this.rbtUAT2);
+            this.groupBox2.Controls.Add(this.rbtUAT1);
+            this.groupBox2.Controls.Add(this.rbtRelease);
+            this.groupBox2.Controls.Add(this.rbtTest);
+            this.groupBox2.Controls.Add(this.rbtPrerelease);
+            this.groupBox2.Location = new System.Drawing.Point(6, -1);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(980, 46);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Phase";
+            // 
+            // rbtUAT4
+            // 
+            this.rbtUAT4.AutoSize = true;
+            this.rbtUAT4.Location = new System.Drawing.Point(817, 17);
+            this.rbtUAT4.Name = "rbtUAT4";
+            this.rbtUAT4.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT4.TabIndex = 6;
+            this.rbtUAT4.TabStop = true;
+            this.rbtUAT4.Text = "UAT4";
+            this.rbtUAT4.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT3
+            // 
+            this.rbtUAT3.AutoSize = true;
+            this.rbtUAT3.Location = new System.Drawing.Point(695, 17);
+            this.rbtUAT3.Name = "rbtUAT3";
+            this.rbtUAT3.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT3.TabIndex = 5;
+            this.rbtUAT3.TabStop = true;
+            this.rbtUAT3.Text = "UAT3";
+            this.rbtUAT3.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT2
+            // 
+            this.rbtUAT2.AutoSize = true;
+            this.rbtUAT2.Location = new System.Drawing.Point(573, 17);
+            this.rbtUAT2.Name = "rbtUAT2";
+            this.rbtUAT2.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT2.TabIndex = 4;
+            this.rbtUAT2.TabStop = true;
+            this.rbtUAT2.Text = "UAT2";
+            this.rbtUAT2.UseVisualStyleBackColor = true;
+            // 
+            // rbtUAT1
+            // 
+            this.rbtUAT1.AutoSize = true;
+            this.rbtUAT1.Location = new System.Drawing.Point(451, 17);
+            this.rbtUAT1.Name = "rbtUAT1";
+            this.rbtUAT1.Size = new System.Drawing.Size(53, 17);
+            this.rbtUAT1.TabIndex = 3;
+            this.rbtUAT1.TabStop = true;
+            this.rbtUAT1.Text = "UAT1";
+            this.rbtUAT1.UseVisualStyleBackColor = true;
+            // 
+            // rbtRelease
+            // 
+            this.rbtRelease.AutoSize = true;
+            this.rbtRelease.Location = new System.Drawing.Point(329, 17);
+            this.rbtRelease.Name = "rbtRelease";
+            this.rbtRelease.Size = new System.Drawing.Size(64, 17);
+            this.rbtRelease.TabIndex = 2;
+            this.rbtRelease.TabStop = true;
+            this.rbtRelease.Text = "Release";
+            this.rbtRelease.UseVisualStyleBackColor = true;
+            this.rbtRelease.CheckedChanged += new System.EventHandler(this.rbtRelease_CheckedChanged);
+            // 
+            // rbtTest
+            // 
+            this.rbtTest.AutoSize = true;
+            this.rbtTest.Location = new System.Drawing.Point(207, 17);
+            this.rbtTest.Name = "rbtTest";
+            this.rbtTest.Size = new System.Drawing.Size(46, 17);
+            this.rbtTest.TabIndex = 1;
+            this.rbtTest.TabStop = true;
+            this.rbtTest.Text = "Test";
+            this.rbtTest.UseVisualStyleBackColor = true;
+            this.rbtTest.CheckedChanged += new System.EventHandler(this.rbtTest_CheckedChanged);
+            // 
+            // rbtPrerelease
+            // 
+            this.rbtPrerelease.AutoSize = true;
+            this.rbtPrerelease.Checked = true;
+            this.rbtPrerelease.Location = new System.Drawing.Point(85, 17);
+            this.rbtPrerelease.Name = "rbtPrerelease";
+            this.rbtPrerelease.Size = new System.Drawing.Size(78, 17);
+            this.rbtPrerelease.TabIndex = 0;
+            this.rbtPrerelease.TabStop = true;
+            this.rbtPrerelease.Text = "Pre-release";
+            this.rbtPrerelease.UseVisualStyleBackColor = true;
+            this.rbtPrerelease.CheckedChanged += new System.EventHandler(this.rbtPrerelease_CheckedChanged);
+            // 
             // No
             // 
             this.No.DataPropertyName = "No";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.No.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.No.DefaultCellStyle = dataGridViewCellStyle3;
             this.No.HeaderText = "#";
             this.No.Name = "No";
             this.No.ReadOnly = true;
@@ -425,7 +530,7 @@
             this.ScriptName.Name = "ScriptName";
             this.ScriptName.ReadOnly = true;
             this.ScriptName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ScriptName.Width = 219;
+            this.ScriptName.Width = 319;
             // 
             // IsFunction
             // 
@@ -454,111 +559,6 @@
             this.FileName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.FileName.Width = 150;
             // 
-            // prgbScript
-            // 
-            this.prgbScript.Location = new System.Drawing.Point(4, 512);
-            this.prgbScript.Name = "prgbScript";
-            this.prgbScript.Size = new System.Drawing.Size(880, 23);
-            this.prgbScript.TabIndex = 27;
-            this.prgbScript.Visible = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbtUAT4);
-            this.groupBox2.Controls.Add(this.rbtUAT3);
-            this.groupBox2.Controls.Add(this.rbtUAT2);
-            this.groupBox2.Controls.Add(this.rbtUAT1);
-            this.groupBox2.Controls.Add(this.rbtRelease);
-            this.groupBox2.Controls.Add(this.rbtTest);
-            this.groupBox2.Controls.Add(this.rbtPrerelease);
-            this.groupBox2.Location = new System.Drawing.Point(6, -1);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(880, 46);
-            this.groupBox2.TabIndex = 28;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Phase";
-            // 
-            // rbtUAT4
-            // 
-            this.rbtUAT4.AutoSize = true;
-            this.rbtUAT4.Location = new System.Drawing.Point(784, 17);
-            this.rbtUAT4.Name = "rbtUAT4";
-            this.rbtUAT4.Size = new System.Drawing.Size(53, 17);
-            this.rbtUAT4.TabIndex = 6;
-            this.rbtUAT4.TabStop = true;
-            this.rbtUAT4.Text = "UAT4";
-            this.rbtUAT4.UseVisualStyleBackColor = true;
-            // 
-            // rbtUAT3
-            // 
-            this.rbtUAT3.AutoSize = true;
-            this.rbtUAT3.Location = new System.Drawing.Point(662, 17);
-            this.rbtUAT3.Name = "rbtUAT3";
-            this.rbtUAT3.Size = new System.Drawing.Size(53, 17);
-            this.rbtUAT3.TabIndex = 5;
-            this.rbtUAT3.TabStop = true;
-            this.rbtUAT3.Text = "UAT3";
-            this.rbtUAT3.UseVisualStyleBackColor = true;
-            // 
-            // rbtUAT2
-            // 
-            this.rbtUAT2.AutoSize = true;
-            this.rbtUAT2.Location = new System.Drawing.Point(540, 17);
-            this.rbtUAT2.Name = "rbtUAT2";
-            this.rbtUAT2.Size = new System.Drawing.Size(53, 17);
-            this.rbtUAT2.TabIndex = 4;
-            this.rbtUAT2.TabStop = true;
-            this.rbtUAT2.Text = "UAT2";
-            this.rbtUAT2.UseVisualStyleBackColor = true;
-            // 
-            // rbtUAT1
-            // 
-            this.rbtUAT1.AutoSize = true;
-            this.rbtUAT1.Location = new System.Drawing.Point(418, 17);
-            this.rbtUAT1.Name = "rbtUAT1";
-            this.rbtUAT1.Size = new System.Drawing.Size(53, 17);
-            this.rbtUAT1.TabIndex = 3;
-            this.rbtUAT1.TabStop = true;
-            this.rbtUAT1.Text = "UAT1";
-            this.rbtUAT1.UseVisualStyleBackColor = true;
-            // 
-            // rbtRelease
-            // 
-            this.rbtRelease.AutoSize = true;
-            this.rbtRelease.Location = new System.Drawing.Point(296, 17);
-            this.rbtRelease.Name = "rbtRelease";
-            this.rbtRelease.Size = new System.Drawing.Size(64, 17);
-            this.rbtRelease.TabIndex = 2;
-            this.rbtRelease.TabStop = true;
-            this.rbtRelease.Text = "Release";
-            this.rbtRelease.UseVisualStyleBackColor = true;
-            this.rbtRelease.CheckedChanged += new System.EventHandler(this.rbtRelease_CheckedChanged);
-            // 
-            // rbtTest
-            // 
-            this.rbtTest.AutoSize = true;
-            this.rbtTest.Location = new System.Drawing.Point(174, 17);
-            this.rbtTest.Name = "rbtTest";
-            this.rbtTest.Size = new System.Drawing.Size(46, 17);
-            this.rbtTest.TabIndex = 1;
-            this.rbtTest.TabStop = true;
-            this.rbtTest.Text = "Test";
-            this.rbtTest.UseVisualStyleBackColor = true;
-            this.rbtTest.CheckedChanged += new System.EventHandler(this.rbtTest_CheckedChanged);
-            // 
-            // rbtPrerelease
-            // 
-            this.rbtPrerelease.AutoSize = true;
-            this.rbtPrerelease.Checked = true;
-            this.rbtPrerelease.Location = new System.Drawing.Point(52, 17);
-            this.rbtPrerelease.Name = "rbtPrerelease";
-            this.rbtPrerelease.Size = new System.Drawing.Size(78, 17);
-            this.rbtPrerelease.TabIndex = 0;
-            this.rbtPrerelease.TabStop = true;
-            this.rbtPrerelease.Text = "Pre-release";
-            this.rbtPrerelease.UseVisualStyleBackColor = true;
-            this.rbtPrerelease.CheckedChanged += new System.EventHandler(this.rbtPrerelease_CheckedChanged);
-            // 
             // ucRollback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,6 +569,7 @@
             this.Controls.Add(this.prgbScript);
             this.Controls.Add(this.groupBox2);
             this.Name = "ucRollback";
+            this.Size = new System.Drawing.Size(992, 541);
             this.Load += new System.EventHandler(this.ucRollback_Load);
             this.pnl_Action.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -616,6 +617,10 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.Panel pnl_Action;
         private System.Windows.Forms.CheckBox chk_SaveUserName;
+        private System.Windows.Forms.RadioButton rbtUAT4;
+        private System.Windows.Forms.RadioButton rbtUAT3;
+        private System.Windows.Forms.RadioButton rbtUAT2;
+        private System.Windows.Forms.RadioButton rbtUAT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Choose;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerName;
@@ -624,9 +629,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsFunction;
         private System.Windows.Forms.DataGridViewTextBoxColumn IP;
         private System.Windows.Forms.DataGridViewTextBoxColumn FileName;
-        private System.Windows.Forms.RadioButton rbtUAT4;
-        private System.Windows.Forms.RadioButton rbtUAT3;
-        private System.Windows.Forms.RadioButton rbtUAT2;
-        private System.Windows.Forms.RadioButton rbtUAT1;
     }
 }
