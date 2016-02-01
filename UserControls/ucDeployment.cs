@@ -598,12 +598,10 @@
 
                 #endregion
 
-                if (!Directory.Exists(deliveryFolder))
+                if (Directory.Exists(deliveryFolder))
                 {
-                    Directory.CreateDirectory(deliveryFolder);
+                    LogUtility.WriteToFile(strconfig, deliveryFolder + @"\" + string.Format("{0}-{1}.config", dateTimeNow, this._description));
                 }
-
-                LogUtility.WriteToFile(strconfig, deliveryFolder + @"\" + string.Format("{0}-{1}.config", dateTimeNow, this._description));
 
                 #region deploy SPs to image servers
                 // deploy SPs to image server
