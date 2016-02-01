@@ -530,7 +530,7 @@
             this.ScriptName.Name = "ScriptName";
             this.ScriptName.ReadOnly = true;
             this.ScriptName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ScriptName.Width = 319;
+            this.ScriptName.Width = 379;
             // 
             // IsFunction
             // 
@@ -557,7 +557,7 @@
             this.FileName.Name = "FileName";
             this.FileName.ReadOnly = true;
             this.FileName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FileName.Width = 150;
+            this.FileName.Width = 90;
             // 
             // ucRollback
             // 

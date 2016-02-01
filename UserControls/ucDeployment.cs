@@ -387,6 +387,7 @@
                 #region Create folder
                 bkconfigname = dateTimeNow + "-" + this._description;
                 string bkfolder = AppDomain.CurrentDomain.BaseDirectory + scriptFolderNameType + @"\" + bkconfigname;
+                string deliveryFolder = AppDomain.CurrentDomain.BaseDirectory + @"\Delivery\" + bkconfigname;
 
                 if (isDeploy)
                 {
@@ -415,6 +416,7 @@
                 #region deploy to main servers & return result
                 ISqlScript tempSqlScript = null;
                 string tempSourceServerIP = string.Empty;
+                var strconfig = string.Empty;
 
                 foreach (ISqlScript sqlScript in this._arrScriptDeployed)
                 {
@@ -534,6 +536,20 @@
 
                                 ChangeScriptCreateOrAlterFollowExistSP(sqlScript);
 
+                                if (!Directory.Exists(deliveryFolder))
+                                {
+                                    Directory.CreateDirectory(deliveryFolder);
+                                }
+
+                                sqlScript.WriteContentToScriptFile(deliveryFolder + @"\" + dateTimeNow
+                                                                                                + "-" + sqlScript.SourceServerAliasName
+                                                                                                + "-" + sqlScript.DbName
+                                                                                                + "-" + this._description
+                                                                                                + "-" + sqlScript.Name + ".sql");
+
+                                strconfig += string.Format("{0}-{1}:{2}\r\n", sqlScript.SourceServerAliasName, sqlScript.DbName, sqlScript.Name);
+                                
+
                                 // deploy main server
                                 sqlScript.Deploy(this._sqlServerUtil);
 
@@ -581,6 +597,13 @@
                 }
 
                 #endregion
+
+                if (!Directory.Exists(deliveryFolder))
+                {
+                    Directory.CreateDirectory(deliveryFolder);
+                }
+
+                LogUtility.WriteToFile(strconfig, deliveryFolder + @"\" + string.Format("{0}-{1}.config", dateTimeNow, this._description));
 
                 #region deploy SPs to image servers
                 // deploy SPs to image server
