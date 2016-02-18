@@ -536,19 +536,20 @@
 
                                 ChangeScriptCreateOrAlterFollowExistSP(sqlScript);
 
-                                if (!Directory.Exists(deliveryFolder))
+                                if (this.rbtRelease.Checked)
                                 {
-                                    Directory.CreateDirectory(deliveryFolder);
-                                }
+                                    if (!Directory.Exists(deliveryFolder))
+                                    {
+                                        Directory.CreateDirectory(deliveryFolder);
+                                    }
 
-                                sqlScript.WriteContentToScriptFile(deliveryFolder + @"\" + dateTimeNow
+                                    sqlScript.WriteContentToScriptFile(deliveryFolder + @"\" + dateTimeNow
                                                                                                 + "-" + sqlScript.SourceServerAliasName
                                                                                                 + "-" + sqlScript.DbName
                                                                                                 + "-" + this._description
                                                                                                 + "-" + sqlScript.Name + ".sql");
-
-                                strconfig += string.Format("{0}-{1}:{2}\r\n", sqlScript.SourceServerAliasName, sqlScript.DbName, sqlScript.Name);
-                                
+                                    strconfig += string.Format("{0}-{1}:{2}\r\n", sqlScript.SourceServerAliasName, sqlScript.DbName, sqlScript.Name);
+                                }
 
                                 // deploy main server
                                 sqlScript.Deploy(this._sqlServerUtil);
@@ -598,9 +599,12 @@
 
                 #endregion
 
-                if (Directory.Exists(deliveryFolder))
+                if (isDeploy && this.rbtRelease.Checked)
                 {
-                    LogUtility.WriteToFile(strconfig, deliveryFolder + @"\" + string.Format("{0}-{1}.config", dateTimeNow, this._description));
+                    if (Directory.Exists(deliveryFolder))
+                    {
+                        LogUtility.WriteToFile(strconfig, deliveryFolder + @"\" + string.Format("{0}-{1}.config", dateTimeNow, this._description));
+                    }
                 }
 
                 #region deploy SPs to image servers
