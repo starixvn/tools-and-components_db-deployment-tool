@@ -124,7 +124,7 @@ namespace DbDeployer.Core
                 {
                     foreach (var text in listText)
                     {
-                        index = text.IndexOf(item);
+                        index = text.ToLower().IndexOf(item.ToLower());
                         if (index > -1)
                         {
                             int i = 0;

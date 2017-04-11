@@ -548,7 +548,8 @@
                                                                                                 + "-" + sqlScript.DbName
                                                                                                 + "-" + this._description
                                                                                                 + "-" + sqlScript.Name + ".sql");
-                                    strconfig += string.Format("{0}-{1}:{2}\r\n", sqlScript.SourceServerAliasName, sqlScript.DbName, sqlScript.Name);
+                                    strconfig += string.Format("{0}-{1}:{2}\r\n", sqlScript.SourceServerAliasName, sqlScript.DbName, 
+                                        sqlScript.Name + (sqlScript.IsSp ? string.Empty : "-x-func-x-"));
                                 }
 
                                 // deploy main server

@@ -45,6 +45,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -115,9 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\BaseSql.cs" />
-    <Compile Include="Core\HiddenCheckBoxTreeNode.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Core\HiddenCheckBoxTreeNode.cs" />
     <Compile Include="Core\ISqlScript.cs" />
     <Compile Include="Core\Phases.cs" />
     <Compile Include="Core\Utils\Enumerations.cs" />
